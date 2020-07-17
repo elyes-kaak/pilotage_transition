@@ -20,7 +20,10 @@ class Cinetique:
         return x[0] - coeff * t - c_init
 
     def cinetique_demande(self, t):
-        return demande_ini + alpha * t
+        if(t <= t_crise) :
+            return demande_ini + alpha * t
+        else :
+            return 0.75 * self.cinetique_demande(t_crise)
 
     def cinetique_techno(self, t, x):
         x_1 = (self.cinetique_demande(x[2]) - self.cinetique_demande(T_life) + X_2) * (((T_life - t) / (T_life - x[2])) ** (x[1] / x[0])) + (self.cinetique_demande(T_life) - X_2)
