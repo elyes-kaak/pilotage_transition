@@ -15,7 +15,7 @@ def methode_budget() :
     contraintes.new_contr_max(cinetique.budget_carbone, max_budget_carbone)
     contraintes.new_contr_max(cinetique.surcout_trajectoire, max_surcout)
     contraintes.new_contr_min(cinetique.surcout_trajectoire, -max_surcout)
-    contraintes.new_contr_max(cinetique.t_car, t_f)
+    # contraintes.new_contr_max(cinetique.t_car, t_f)
 
     # Résolution du problème d'optimisation (fonction objectif correspondant à la minimisation de la valeur finale de x_1
     optimisation = Optim(lambda x : cinetique.cinetique_evolution(t_f, x), contraintes.contr, bnds, x0, cinetique.budget_carbone, cinetique.surcout_trajectoire)
@@ -33,7 +33,7 @@ def methode_surcout() :
     # Définition des contraintes : temps et budget
     contraintes = Contraintes()
     contraintes.new_contr_max(cinetique.budget_carbone, max_budget_carbone)
-    contraintes.new_contr_max(cinetique.t_car, t_f)
+    # contraintes.new_contr_max(cinetique.t_car, t_f)
 
     # Résolution du problème d'optimisation (fonction objectif correspondant à la minimisation du surcoût sur la trajectoire
     optimisation = Optim(cinetique.surcout_trajectoire, contraintes.contr, bnds, x0, cinetique.budget_carbone, cinetique.surcout_trajectoire)

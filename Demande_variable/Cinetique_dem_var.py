@@ -14,7 +14,7 @@ class Cinetique:
         return abs((x[0] - c_init) / x[2])
 
     def evol_taxe(self, t, x, c_init, coeff):
-        if(t < x[2]) :
+        if(t <= x[2]) :
             return self.cinetique_cout(t, x, c_init) - coeff * t - c_init
 
         return x[0] - coeff * t - c_init
@@ -25,7 +25,7 @@ class Cinetique:
     def cinetique_techno(self, t, x):
         x_1 = (self.cinetique_demande(x[2]) - self.cinetique_demande(T_life) + X_2) * (((T_life - t) / (T_life - x[2])) ** (x[1] / x[0])) + (self.cinetique_demande(T_life) - X_2)
 
-        if(self.cinetique_demande(t) - x_1 >= X_2) :
+        if(self.cinetique_demande(t) - x_1 > X_2) :
             return self.cinetique_demande(t)-X_2
 
         if(x_1 < 0) :
