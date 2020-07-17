@@ -46,6 +46,6 @@ class Plot :
         self.ax3.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), fancybox=True, shadow=True, ncol = 1)
         self.ax3.grid(linestyle = '--')
         self.fig.subplots_adjust(wspace=0.3)
-        plt.show()
+
 
 

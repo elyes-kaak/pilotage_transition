@@ -30,8 +30,5 @@ class Optim:
         print('Emissions de la solution : ', self.budget_carb(x))
         print('Surcout : ', self.surcout(x))
 
-        if self.budget_carb(x) > max_budget_carbone or abs(self.surcout(x)) > max_surcout :
-            print('Solution pas ok')
-
         # print(solution)
         return x

@@ -11,7 +11,7 @@ seuil = 0.01   # moment où la transition est accomplie
 alpha = 0   # coefficient d'évolution de la demande
 alpha_c1 = 0   # coefficient d'évolution naturelle du coût de la technologie 1
 alpha_c2 = 0   # coefficient d'évolution naturelle du coût de la technologie 2
-t_crise = 1000
+crise = 4
 
 # Contraintes
 max_budget_carbone = 9000
