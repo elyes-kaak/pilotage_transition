@@ -2,6 +2,6 @@ from Methodes import *
 
 test = Methodes()
 
-Methodes.methode_budget()
-Methodes.methode_emissions()
-Methodes.methode_surcout()
+# test.methode_budget()
+test.methode_emissions()
+# test.methode_surcout()

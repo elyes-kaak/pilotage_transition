@@ -1,5 +1,4 @@
 from scipy.optimize import minimize
-from Parametres import *
 
 class Optim:
     def __init__(self, objectif, contraintes, bounds, val_init, budget_carb, surcout):

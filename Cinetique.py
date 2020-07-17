@@ -1,4 +1,3 @@
-import numpy as np
 from Parametres import *
 from sympy import *
 import scipy.integrate as integrate

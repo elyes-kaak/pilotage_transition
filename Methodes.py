@@ -1,7 +1,7 @@
-from Optim import *
 from Contraintes import *
 from Optim import *
 from Plot import *
+from Cinetique import *
 
 
 class Methodes :
