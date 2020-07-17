@@ -26,6 +26,7 @@ class Cinetique:
 
     def cinetique_techno(self, t, t_crise, x):
         x_1 = (self.cinetique_demande(x[2], 1000) - self.cinetique_demande(T_life, 1000) + X_2) * (((T_life - t) / (T_life - x[2])) ** (x[1] / x[0])) + (self.cinetique_demande(T_life, 1000) - X_2)
+
         if(t >= t_crise) :
             x_1 = x_1 - (self.cinetique_demande(0, t_crise) - self.cinetique_demande(t, t_crise))
 
