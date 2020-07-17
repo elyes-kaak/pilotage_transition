@@ -1,4 +1,4 @@
-from Demande_variable.Methodes import *
+from Methodes import *
 
 test = Methodes()
 

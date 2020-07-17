@@ -1,9 +1,8 @@
-import numpy as np
-from Parametres import *
 from Optim import *
 from Contraintes import *
-from Demande_variable.Cinetique_dem_var import *
+from Optim import *
 from Plot import *
+
 
 class Methodes :
     def methode_budget(self) :
