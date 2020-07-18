@@ -5,7 +5,7 @@ test = Methodes()
 
 # test.methode_budget()
 # test.methode_emissions()
-# test.methode_surcout()
+test.methode_surcout('Methode_surcout_tt_cst')
 
 # evol_x1_c_cst()
 # evol_x1_k_cst()

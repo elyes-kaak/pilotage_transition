@@ -9,9 +9,10 @@ c1i = 30   # coût initial de la technologie 1
 c2i = 60   # coût initial de la technologie 2
 seuil = 0.01   # moment où la transition est accomplie
 alpha = 0   # coefficient d'évolution de la demande
-alpha_c1 = 0   # coefficient d'évolution naturelle du coût de la technologie 1
-alpha_c2 = 0   # coefficient d'évolution naturelle du coût de la technologie 2
-crise = 4
+beta_c1 = 0   # coefficient d'évolution naturelle du coût de la technologie 1
+beta_c2 = 0   # coefficient d'évolution naturelle du coût de la technologie 2
+crise = 15
+gama = 0.9
 
 # Contraintes
 max_budget_carbone = 9000
@@ -27,9 +28,6 @@ bnds = (b1, b2, b3)
 # Valeurs initiales
 n = 3
 x0 = np.zeros(n)
-'''x0[0] = 20   # valeur initiale de C
-x0[1] = 150    # valeur initiale de K
-x0[2] = 40    # valeur initiale de t_1'''
 
 x0[0] = 10   # valeur initiale de C
 x0[1] = 10    # valeur initiale de K

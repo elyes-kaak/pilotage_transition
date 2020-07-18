@@ -26,8 +26,8 @@ class Optim:
 
         print('Final Objective: ' + str(int(self.objectif(x))))
 
-        print('Emissions de la solution : ', self.budget_carb(x))
-        print('Surcout : ', self.surcout(x))
+        print('Emissions de la solution : ', str(int(self.budget_carb(x))))
+        print('Surcout : ', str(int(self.surcout(x))))
 
         # print(solution)
         return x
