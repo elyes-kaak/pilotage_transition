@@ -9,19 +9,19 @@ c1i = 30   # coût initial de la technologie 1
 c2i = 60   # coût initial de la technologie 2
 seuil = 0.01   # moment où la transition est accomplie
 alpha = 0   # coefficient d'évolution de la demande
-beta_c1 = 0   # coefficient d'évolution naturelle du coût de la technologie 1
-beta_c2 = 0   # coefficient d'évolution naturelle du coût de la technologie 2
+beta_c1 = -0.1   # coefficient d'évolution naturelle du coût de la technologie 1
+beta_c2 = -0.3   # coefficient d'évolution naturelle du coût de la technologie 2
 crise = 15
 gama = 0.9
 
 # Contraintes
 max_budget_carbone = 9000
 max_surcout = 100000
-max_pente_couts = 10
+max_pente_couts = 5
 
 # Limites
 b1 = (1, 1000)   # Limites de C
-b2 = (1, 320)    # Limites de K
+b2 = (1, 500)    # Limites de K
 b3 = (1, t_f)     # Limites de T_1
 bnds = (b1, b2, b3)
 

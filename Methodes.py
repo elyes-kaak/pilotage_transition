@@ -27,7 +27,7 @@ class Methodes :
         plot.plot()
 
         temps, evol_couts, evol_techno, type_techno, demande, evol_taxes = cinetique.eq_evol(x, crise)
-        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + ' (crise)')
+        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + '_crise')
         print('Emissions de la solution (crise) : ', str(int(cinetique.budget_carbone(x, crise))))
         print('Surcout (crise) : ', str(int(cinetique.surcout_trajectoire(x, crise))))
         plot.plot()
@@ -57,7 +57,7 @@ class Methodes :
         plot.plot()
 
         temps, evol_couts, evol_techno, type_techno, demande, evol_taxes = cinetique.eq_evol(x, crise)
-        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + ' (crise)')
+        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + '_crise')
         print('Emissions de la solution (crise) : ', str(int((cinetique.budget_carbone(x, crise)))))
         print('Surcout (crise) : ', str(int((cinetique.surcout_trajectoire(x, crise)))))
         plot.plot()
@@ -85,7 +85,7 @@ class Methodes :
         plot.plot()
 
         temps, evol_couts, evol_techno, type_techno, demande, evol_taxes = cinetique.eq_evol(x, crise)
-        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + ' (crise)')
+        plot = Plot(temps, evol_couts, evol_techno, type_techno, demande, evol_taxes, x, crise, description + '_crise')
         print('Emissions de la solution (crise) : ', str(int(cinetique.budget_carbone(x, crise))))
         print('Surcout (crise) : ', str(int(cinetique.surcout_trajectoire(x, crise))))
         plot.plot()
