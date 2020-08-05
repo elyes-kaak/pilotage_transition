@@ -1,6 +1,8 @@
-from Parametres import *
-from sympy import *
 import scipy.integrate as integrate
+from sympy import *
+
+from Deux_techno.Parametres import *
+
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 

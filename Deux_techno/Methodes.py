@@ -1,7 +1,8 @@
+from Cinetique import *
 from Contraintes import *
 from Optim import *
-from Plot import *
-from Cinetique import *
+
+from Deux_techno.Plot import *
 
 
 class Methodes :

@@ -11,7 +11,7 @@ seuil = 0.01   # moment où la transition est accomplie
 alpha = 0   # coefficient d'évolution de la demande
 beta_c1 = -0.1   # coefficient d'évolution naturelle du coût de la technologie 1
 beta_c2 = -0.3   # coefficient d'évolution naturelle du coût de la technologie 2
-crise = 15
+crise = 15    # instant d'appartition d'une crise
 gama = 0.9
 
 # Contraintes
