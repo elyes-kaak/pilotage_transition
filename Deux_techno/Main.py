@@ -1,4 +1,4 @@
-from Annexes import *
+from Deux_techno.Annexes import *
 
 # test = Methodes()
 

@@ -1,6 +1,6 @@
-from Cinetique import *
-from Contraintes import *
-from Optim import *
+from Deux_techno.Cinetique import *
+from Deux_techno.Contraintes import *
+from Deux_techno.Optim import *
 
 from Deux_techno.Plot import *
 

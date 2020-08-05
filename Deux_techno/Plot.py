@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib import rc
-from Cinetique import *
+from Deux_techno.Cinetique import *
 
 rc('text', usetex=True)
 rc('font',**{'family':'serif','serif':['Computer Modern Roman']})

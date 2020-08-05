@@ -1,4 +1,4 @@
-from Cinetique import *
+from Deux_techno.Cinetique import *
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
 
