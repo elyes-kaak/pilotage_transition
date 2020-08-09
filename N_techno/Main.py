@@ -18,9 +18,10 @@ test = Cinetique()
 
 temps, [techno_dec, techno_car] = test.tableau_evol(x0)
 
+line_style = ['-', ':', '--']
 
 for i in range(m) :
-    plt.plot(temps, techno_dec[i], label = r'Activit\'e de la technologie d\'ecarbon\'ee ' + str(i))
+    plt.plot(temps, techno_dec[i], label = r'Activit\'e de la technologie d\'ecarbon\'ee ' + str(i), linestyle = line_style[i])
 
 for i in range(n-m) :
     plt.plot(temps, techno_car[i], label = r'Activit\'e de la technologie carbon\'ee ' + str(i))
@@ -37,7 +38,7 @@ for i in range(n-m) :
         S[j] += techno_car[i][j]
 
 for j in range(len(temps)) :
-    if (abs(S[j] - test.cinetique_demande(temps[j])) > 0.1) :
+   if (abs(S[j] - test.cinetique_demande(temps[j])) > 0.01) :
         print(temps[j], S[j] - test.cinetique_demande(temps[j]))
 plt.legend()
 plt.show()
