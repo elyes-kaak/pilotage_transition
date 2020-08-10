@@ -8,7 +8,7 @@ from scipy.optimize import fsolve
 class Cinetique:
 
     def __init__(self):
-        self.t_prime = []
+        self.t_prime = [-1 for i in range(m)]
         self.index_tra = 0
         self.index_tra_debut = 0
         self.last_ratio = p_0
@@ -43,15 +43,23 @@ class Cinetique:
         return debut, fin
 
     def mix_instant_t(self, t, x):
-        self.index_tra_debut, self.index_tra = self.index_transition(t, x)
+        if t >= x[0] :
+            self.index_tra_debut, self.index_tra = self.index_transition(t, x)
 
         if(self.instant_actuel < x[self.index_tra - 1] and t >= x[self.index_tra - 1]) :
             self.x_car_ini = [elem for elem in self.x_car]
+
+        for i in range(self.index_tra_debut - 1) :
+            if(self.t_prime[i] == -1) :
+                self.t_prime[i] = self.instant_actuel
 
         self.instant_actuel = t
 
         if (np.all(np.abs(np.array([self.x_car[k] for k in range(n-m)]) - np.array([X_jF[k] for k in range(n-m)])) <= 0.05 * np.array([X_jF[k] for k in range(n-m)]))):
             self.t_f = True
+            for i in range(m) :
+                if(self.t_prime[i] == -1) :
+                    self.t_prime[i] = t
 
         if (t <= x[0]):
             for j in  range(n-m) :
@@ -80,9 +88,15 @@ class Cinetique:
 
                 X_j_atteint = []
                 for j in range(self.index_tra_debut - 1, self.index_tra) :
-                    self.x_dec[j] = max(0, (1/len(range(self.index_tra_debut - 1, self.index_tra))) * (self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(self.index_tra_debut - 1)]) - sum(self.x_car[k] for k in range(n-m))))
+                    self.x_dec[j] = max(0, (1/len(range(self.index_tra_debut - 1, self.index_tra))) *
+                                        (self.cinetique_demande(t) -
+                                         sum([self.x_dec[k] for k in range(self.index_tra_debut - 1)]) -
+                                         sum(self.x_car[k] for k in range(n-m))))
+
                     if(self.x_dec[j] > X_j[j]) :
                         X_j_atteint.append(j)
+                        if(self.t_prime[j] == -1):
+                            self.t_prime[j] = t
 
                 if (len(X_j_atteint) > 0):
                     for j in range(self.index_tra_debut - 1, self.index_tra):
@@ -103,22 +117,22 @@ class Cinetique:
                     for j in range(m) :
                         self.x_dec[j] = (self.cinetique_demande(t) - sum(self.x_car)) * self.last_ratio_dec[j]
 
-                for j in range(m) :
-                    self.last_ratio_dec[j] = self.x_dec[j] / sum(self.x_dec)
-
-                for j in range(n-m) :
-                    self.last_ratio[j] = self.x_car[j] / sum(self.x_car)
-
                 if (self.cmp([self.x_dec[k] for k in range(self.index_tra_debut - 1, self.index_tra)],
                              [X_j[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
                     for j in range(n - m):
                         self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (
                         self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
 
+                for j in range(m) :
+                    self.last_ratio_dec[j] = self.x_dec[j] / sum(self.x_dec)
+
+                for j in range(n-m) :
+                    self.last_ratio[j] = self.x_car[j] / sum(self.x_car)
+
     def x_car_ligne(self, t, x, j, i):
         if(t <= T_life[j]):
             x_ini = self.x_car_ini[j]
-            return (x_ini - X_jF[j]) * ((T_life[j] - t) / (T_life[j] - x[i])) ** (x[2*m + j - 1] / x[m - 1 + i]) + X_jF[j]
+            return (x_ini - X_jF[j]) * ((T_life[j] - t) / (T_life[j] - x[i])) ** (x[2*m + j] / x[m + i]) + X_jF[j]
 
         return X_jF[j]
 
@@ -132,17 +146,61 @@ class Cinetique:
             self.mix_instant_t(t, x)
         return self.x_dec[i]
 
-
     def tableau_evol(self, x):
         temps = [i for i in np.arange(0, 100, 0.1)]
 
         techno_dec = [[] for i in range(m)]
-        techno_car = [[] for i in range(n-m)]
+        techno_car = [[] for i in range( n -m)]
+        cout_decar = [[] for i in range(m)]
+        cout_carb = [[] for i in range(n - m)]
         for t in temps :
+            self.mix_instant_t(t, x)
             self.last_demand = self.cinetique_demande(t)
-            for j in range(n-m) :
+            for j in range( n -m) :
                 techno_car[j].append(self.cinetique_techno_carb(t, x, j))
+                cout_carb[j].append(self.cout_car(t, x, j))
             for j in range(m) :
                 techno_dec[j].append(self.cinetique_techno_decar(t, x, j))
+                cout_decar[j].append(self.cout_dec(t, x, j))
+        return temps, [techno_dec, techno_car], [cout_decar, cout_carb]
 
-        return temps, [techno_dec, techno_car]
+    def cout_dec(self, t, x, j):
+        _ , i_trans = self.index_transition(x[j], x)
+        cout_transition = x[m + i_trans - 1]
+        if(t < x[j]) :
+            return ((cout_transition - ci_decar[j]) / x[j]) * t + ci_decar[j]
+
+        elif(t > self.t_prime[j] and self.t_prime[j] > -1) :
+            return beta_decar[j] * (t - self.t_prime[j]) + cout_transition
+
+        return cout_transition
+
+    def cout_car(self, t, x, j):
+        if(t < x[0]) :
+            _, i_trans = self.index_transition(x[0], x)
+            cout_transition = x[m + i_trans - 1]
+            return ((cout_transition - ci_car[j]) / x[0]) * t + ci_car[j]
+
+        else :
+            i_trans_debut, i_trans = self.index_transition(t, x)
+            cout_transition = x[m + i_trans - 1]
+            for k in range(i_trans_debut - 1, i_trans) :
+                if(self.t_prime[k] == -1) :
+                    return cout_transition
+
+            if(i_trans == m) :
+                return beta_car[j] * (t - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) + cout_transition
+
+            return ((x[m + i_trans] - cout_transition) / (x[i_trans] - x[i_trans - 1])) * (t - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) + cout_transition
+
+    def cout_car_nat(self, t, j):
+        return beta_car[j] * t + ci_car[j]
+
+    def cout_dec_nat(self,t, j):
+        return beta_decar[j] * t + ci_decar[j]
+
+    def taxes_car(self, t, x, j):
+        return self.cout_car(t, x, j) - self.cout_car_nat(t, x, j)
+
+    def taxes_dec(self, t, x, j):
+        return self.cout_dec(t, x, j) - self.cout_dec_nat(t, x, j)

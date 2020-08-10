@@ -16,17 +16,18 @@ rc('font',**{'family':'serif','serif':['Computer Modern Roman']})
 
 test = Cinetique()
 
-temps, [techno_dec, techno_car] = test.tableau_evol(x0)
+temps, [techno_dec, techno_car], [cout_dec, cout_car] = test.tableau_evol(x0)
 
 line_style = ['-', ':', '--']
 
 for i in range(m) :
-    plt.plot(temps, techno_dec[i], label = r'Activit\'e de la technologie d\'ecarbon\'ee ' + str(i), linestyle = line_style[i])
+    plt.plot(temps, cout_dec[i], label = r'Activit\'e de la technologie d\'ecarbon\'ee ' + str(i), linestyle = line_style[i])
 
 for i in range(n-m) :
-    plt.plot(temps, techno_car[i], label = r'Activit\'e de la technologie carbon\'ee ' + str(i))
+    plt.plot(temps, cout_car[i], label = r'Activit\'e de la technologie carbon\'ee ' + str(i))
 
-plt.plot(temps, [test.cinetique_demande(t) for t in temps], label = r'Demande \'energ\'etique')
+print(test.t_prime)
+# plt.plot(temps, [test.cinetique_demande(t) for t in temps], label = r'Demande \'energ\'etique')
 
 S = [0 for t in temps]
 for i in range(m) :

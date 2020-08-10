@@ -7,10 +7,12 @@ demande_ini = 200   # demande énergétique
 X_j = [200, 200, 200] # productions maximales des techno décarbonées
 X_jF = [0.01, 0.01] # valeurs finales des techno carbonées
 
-ci_car = [30, 20] # coûts initiaux des techno carbonées
+ci_car = [50, 60] # coûts initiaux des techno carbonées
 p_0 = [0.7, 0.3] # part des technologies carbonées dans le mix initial
-ci_decar = [60, 70, 80] # coûts initiaux des techno décarbonées
+ci_decar = [90, 70, 80] # coûts initiaux des techno décarbonées
 
+beta_car = [-0.1, -0.2]
+beta_decar = [-0.5, -0.6, -0.7]
 alpha = -0.5   # coefficient d'évolution de la demande
 
 n = 5 # nombre total de technologies (carbonées et décarbonées)
@@ -25,8 +27,8 @@ m = 3 # nombre total de technologies décarbonées
 # Valeurs initiales
 x0 = np.array([])
 
-x0 = np.append(x0, [30, 30, 40])  # valeur initiale de t_i
-x0 = np.append(x0, [10, 20, 5])    # valeur initiale de c_i
+x0 = np.append(x0, [10, 10, 40])  # valeur initiale de t_i
+x0 = np.append(x0, [30, 20, 5])    # valeur initiale de c_i
 x0 = np.append(x0, [100, 220])    # valeur initiale de k_j
 
 
