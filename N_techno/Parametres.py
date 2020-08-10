@@ -4,7 +4,7 @@ from itertools import permutations
 # Paramètres globaux
 T_life = [60, 70]   # durées de vie des techno carbonées
 demande_ini = 200   # demande énergétique
-X_j = [200, 200, 200] # productions maximales des techno décarbonées
+X_j = [50, 200, 200] # productions maximales des techno décarbonées
 X_jF = [0.01, 0.01] # valeurs finales des techno carbonées
 
 ci_car = [50, 60] # coûts initiaux des techno carbonées
@@ -27,7 +27,7 @@ m = 3 # nombre total de technologies décarbonées
 # Valeurs initiales
 x0 = np.array([])
 
-x0 = np.append(x0, [10, 10, 40])  # valeur initiale de t_i
+x0 = np.append(x0, [5, 20, 30])  # valeur initiale de t_i
 x0 = np.append(x0, [30, 20, 5])    # valeur initiale de c_i
 x0 = np.append(x0, [100, 220])    # valeur initiale de k_j
 

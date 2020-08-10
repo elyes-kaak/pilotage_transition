@@ -1,4 +1,5 @@
 from scipy.optimize import minimize
+from N_techno.Parametres import *
 
 class Optim:
     def __init__(self, objectif, contraintes, bounds, val_init, budget_carb, surcout):
@@ -20,9 +21,23 @@ class Optim:
         print('Success: ', solution.success)
         print('Message: ', solution.message)
         print('Solution')
-        print('c = ' + str(int(x[0])))
-        print('k = ' + str(int(x[1])))
-        print('t_1 = ' + str(int(x[2])))
+
+        t_i = ''
+        k_i = ''
+        c_i = ''
+        for i in range(m - 1, -1, -1):
+            t_i = t_i + 't_' + str(i) + '= ' + str(int(self.x[i])) + ' '
+            c = x[m + i]
+            for j in range(i + 1, m):
+                if (x[j] == x[i]):
+                    c = x[m + i]
+            c_i = c_i + 'c_' + str(i) + '= ' + str(int(c)) + ' '
+
+        for i in range(n - m):
+            k_i = x[2 * m + i]
+        print(c_i)
+        print(t_i)
+        print(k_i)
 
         print('Final Objective: ' + str(int(self.objectif(x))))
 

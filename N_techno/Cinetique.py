@@ -43,6 +43,8 @@ class Cinetique:
         return debut, fin
 
     def mix_instant_t(self, t, x):
+        T_life_atteint = [t > T_life[j] for j in range(n-m)]
+
         if t >= x[0] :
             self.index_tra_debut, self.index_tra = self.index_transition(t, x)
 
@@ -62,8 +64,11 @@ class Cinetique:
                     self.t_prime[i] = t
 
         if (t <= x[0]):
-            for j in  range(n-m) :
-               self.x_car[j] = p_0[j] * self.cinetique_demande(t)
+            for j in range(n-m) :
+                if(T_life_atteint[j]) :
+                    self.x_car[j] = X_jF[j]
+                else :
+                    self.x_car[j] = p_0[j] * self.cinetique_demande(t)
 
             for j in range(m) :
                 self.x_dec[j] = 0
@@ -80,7 +85,10 @@ class Cinetique:
                          [X_j[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
 
                 for j in range(n-m) :
-                    self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
+                    if (T_life_atteint[j]):
+                        self.x_car[j] = X_jF[j]
+                    else:
+                        self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
 
             else :
                 for j in range(n-m) :
@@ -120,8 +128,11 @@ class Cinetique:
                 if (self.cmp([self.x_dec[k] for k in range(self.index_tra_debut - 1, self.index_tra)],
                              [X_j[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
                     for j in range(n - m):
-                        self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (
-                        self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
+                        if (T_life_atteint[j]):
+                            self.x_car[j] = X_jF[j]
+                        else:
+                            self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (
+                            self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
 
                 for j in range(m) :
                     self.last_ratio_dec[j] = self.x_dec[j] / sum(self.x_dec)
@@ -145,24 +156,6 @@ class Cinetique:
         if(self.instant_actuel != t) :
             self.mix_instant_t(t, x)
         return self.x_dec[i]
-
-    def tableau_evol(self, x):
-        temps = [i for i in np.arange(0, 100, 0.1)]
-
-        techno_dec = [[] for i in range(m)]
-        techno_car = [[] for i in range( n -m)]
-        cout_decar = [[] for i in range(m)]
-        cout_carb = [[] for i in range(n - m)]
-        for t in temps :
-            self.mix_instant_t(t, x)
-            self.last_demand = self.cinetique_demande(t)
-            for j in range( n -m) :
-                techno_car[j].append(self.cinetique_techno_carb(t, x, j))
-                cout_carb[j].append(self.cout_car(t, x, j))
-            for j in range(m) :
-                techno_dec[j].append(self.cinetique_techno_decar(t, x, j))
-                cout_decar[j].append(self.cout_dec(t, x, j))
-        return temps, [techno_dec, techno_car], [cout_decar, cout_carb]
 
     def cout_dec(self, t, x, j):
         _ , i_trans = self.index_transition(x[j], x)
@@ -200,7 +193,7 @@ class Cinetique:
         return beta_decar[j] * t + ci_decar[j]
 
     def taxes_car(self, t, x, j):
-        return self.cout_car(t, x, j) - self.cout_car_nat(t, x, j)
+        return self.cout_car(t, x, j) - self.cout_car_nat(t, j)
 
     def taxes_dec(self, t, x, j):
-        return self.cout_dec(t, x, j) - self.cout_dec_nat(t, x, j)
+        return self.cout_dec(t, x, j) - self.cout_dec_nat(t, j)

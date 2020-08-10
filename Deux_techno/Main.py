@@ -8,5 +8,3 @@ from Deux_techno.Annexes import *
 
 # evol_x1_c_cst()
 # evol_x1_k_cst()
-
-evol_x_multi_techno()

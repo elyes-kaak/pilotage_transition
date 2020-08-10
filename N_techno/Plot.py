@@ -1,30 +1,35 @@
 import matplotlib.pyplot as plt
 from matplotlib import rc
-from Deux_techno.Cinetique import *
+from N_techno.Calcul_trajectoire import *
 
 rc('text', usetex=True)
 rc('font',**{'family':'serif','serif':['Computer Modern Roman']})
 
 class Plot :
 
-    def __init__(self, t, couts, techno, type_techno, demande, taxes, x, t_crise, description = 'test'):
+    def __init__(self, t, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, description = 'test'):
 
         self.fig, (self.ax1, self.ax2, self.ax3) = plt.subplots(nrows = 1, ncols = 3)
         self.t = t
-        self.couts = couts
-        self.techno = techno
+        self.taxes_decar = taxes_decar
+        self.taxes_carb = taxes_carb
         self.demande = demande
-        self.type_techno = type_techno
-        self.taxes = taxes
+        self.c_nat_decar = c_nat_decar
+        self.c_nat_carb = c_nat_carb
         self.description = description
+        self.techno_dec = techno_dec
+        self.techno_car = techno_car
         self.x = x
-        self.t_crise = t_crise
 
     def plot(self):
         self.fig.set_size_inches((12, 5), forward=False)
         self.ax1.plot(self.t, self.demande, 'r-', label = r'Demande \'energ\'etique')
-        for i in range(len(self.techno)) :
-            self.ax1.plot(self.t, self.techno[i], label = r'Activit\'e de la technologie ' + self.type_techno[i])
+
+        for i in range(m):
+            self.ax1.plot(self.t, self.techno_dec[i], label=r'Activit\'e de la technologie d\'ecarbon\'ee ' + str(i))
+
+        for i in range(n - m):
+            self.ax1.plot(self.t, self.techno_car[i], label=r'Activit\'e de la technologie carbon\'ee ' + str(i))
 
         self.ax1.set_title(r'\'Evolution de la demande et des activit\'es''\n'r'des diff\'erentes technologies')
         self.ax1.set_ylabel(r'Demande ou activit\'e (MTep)')
@@ -32,8 +37,11 @@ class Plot :
         self.ax1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=1)
         self.ax1.grid(linestyle='--')
 
-        for i in range(len(self.couts)) :
-            self.ax2.plot(self.t, self.couts[i], label = r'Co\^ut de la technologie ' + self.type_techno[i])
+        for i in range(m):
+            self.ax2.plot(self.t, np.add(self.c_nat_decar[i], self.taxes_decar[i]), label=r'Co\^ut de la technologie d\'ecarbon\'ee ' + str(i))
+
+        for i in range(n - m):
+            self.ax2.plot(self.t, np.add(self.c_nat_carb[i], self.taxes_carb[i]), label=r'Co\^ut de la technologie carbon\'ee ' + str(i))
 
         self.ax2.set_title(r'Evolution des co\^uts')
         self.ax2.set_ylabel(r'Co\^uts (\$/MTep)')
@@ -41,9 +49,11 @@ class Plot :
         self.ax2.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol = 1)
         self.ax2.grid(linestyle = '--')
 
-        for i in range(len(self.taxes)) :
-            self.ax3.plot(self.t, self.taxes[i], label = r'Taxe ou subvention sur la technologie ' + self.type_techno[i])
+        for i in range(m) :
+            self.ax3.plot(self.t, self.taxes_decar[i], label = r'Taxe ou subvention sur la technologie d\'ecarbon\'ee ' + str(i))
 
+        for i in range(n - m) :
+            self.ax3.plot(self.t, self.taxes_carb[i], label = r'Taxe ou subvention sur la technologie carbon\'ee ' + str(i))
         self.ax3.set_title(r'Evolution des taxes')
         self.ax3.set_ylabel(r'Co\^uts (\$/MTep)')
         self.ax3.set_xlabel(r'Temps')
@@ -52,12 +62,25 @@ class Plot :
         self.fig.subplots_adjust(wspace=0.3)
 
         cinetique = Cinetique()
-        mdata = {'Description': 'c = ' + str(int(self.x[0])) + ' k = ' + str(int(self.x[1])) + ' t_1 = ' + str(int(self.x[2]))
-                                + '\n Emissions = ' + str(int(cinetique.budget_carbone(self.x, self.t_crise)))
-                                + ' Surcout = ' + str(int(cinetique.surcout_trajectoire(self.x, self.t_crise)))
-                                + '\n t_f = ' + str(t_f) + ' alpha = ' + str(alpha) + ' beta_1 = ' + str(beta_c1) + ' beta_2 = ' + str(beta_c2)
-                                + '\n k_max = ' + str(b2[1]) + ' max_surcout = ' + str(max_surcout)
-                                + ' max_budget = ' + str(max_budget_carbone) + ' max_pente_couts = ' + str(max_pente_couts)}
+        t_i = ''
+        k_i = ''
+        c_i = ''
+        for i in range(m-1, -1, -1) :
+            t_i = t_i + 't_' + str(i) + '= ' + str(int(self.x[i])) + ' '
+            c = self.x[m + i]
+            for j in range(i + 1, m) :
+                if(self.x[j] == self.x[i]) :
+                    c = self.x[m + i]
+            c_i = c_i + 'c_' + str(i) + '= ' + str(int(c)) + ' '
+
+        for i in range(n-m) :
+            k_i = self.x[2*m + i]
+
+        mdata = {'Description': t_i + c_i + k_i
+                                + '\n Emissions = ' + str(int(Calcul_trajectoire(self.x).budget_carbone()))
+                                + ' Surcout = ' + str(int(Calcul_trajectoire(self.x).surcout_trajectoire()))
+                                + ' max_surcout = ' + str(max_surcout)
+                                + ' max_budget = ' + str(max_budget_carbone)}
 
         plt.savefig('Figures/' + self.description + '.png', bbox_inches='tight', dpi=500, metadata=mdata)
 
