@@ -1,29 +1,34 @@
 import scipy.integrate as integrate
 from N_techno.Parametres import *
 from scipy.optimize import fsolve
+import math
 
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 
 class Cinetique:
 
-    def __init__(self):
+    def __init__(self, ci):
         self.t_prime = [-1 for i in range(m)]
         self.index_tra = 0
         self.index_tra_debut = 0
-        self.last_ratio = p_0
+        self.last_ratio = p_1
         self.instant_actuel = 0
         self.last_ratio_dec = [0 for j in range(m)]
         self.x_dec = np.zeros(m)
         self.x_car = [p_0[j] * self.cinetique_demande(0) for j in range(n-m)]
         self.x_car_ini = [p_0[j] * self.cinetique_demande(0) for j in range(n - m)]
         self.t_f = False
+        self.ci_dec = ci
 
     def cmp(self, a, b):
         return (not(a > b) and not(a < b))
 
     def cinetique_demande(self, t):
-        return demande_ini + alpha * t
+        if(t <= 34) :
+            return demande_ini - 0.0016 * t**4 + 0.1097 * t**3 - 1.9561 * t**2 + 5.9101 * t
+        else :
+            return self.cinetique_demande(34)
 
     def index_transition(self, t, x):
         debut = -1
@@ -43,6 +48,8 @@ class Cinetique:
         return debut, fin
 
     def mix_instant_t(self, t, x):
+        x = x_to_bnds(x)
+
         T_life_atteint = [t > T_life[j] for j in range(n-m)]
 
         if t >= x[0] :
@@ -134,11 +141,20 @@ class Cinetique:
                             self.x_car[j] = max(X_jF[j], self.last_ratio[j] * (
                             self.cinetique_demande(t) - sum([self.x_dec[k] for k in range(m)])))
 
+                S_dec = sum(self.x_dec)
+                S_car = sum(self.x_car)
                 for j in range(m) :
-                    self.last_ratio_dec[j] = self.x_dec[j] / sum(self.x_dec)
+                    if(S_dec == 0) :
+                        self.last_ratio_dec[j] = 0
+                    else :
+                        self.last_ratio_dec[j] = self.x_dec[j] / S_dec
 
                 for j in range(n-m) :
-                    self.last_ratio[j] = self.x_car[j] / sum(self.x_car)
+                    if(S_car == 0) :
+                        self.last_ratio[j] = 0
+
+                    else :
+                        self.last_ratio[j] = self.x_car[j] / S_car
 
     def x_car_ligne(self, t, x, j, i):
         if(t <= T_life[j]):
@@ -158,10 +174,13 @@ class Cinetique:
         return self.x_dec[i]
 
     def cout_dec(self, t, x, j):
+        x = x_to_bnds(x)
+
         _ , i_trans = self.index_transition(x[j], x)
+
         cout_transition = x[m + i_trans - 1]
         if(t < x[j]) :
-            return ((cout_transition - ci_decar[j]) / x[j]) * t + ci_decar[j]
+            return ((cout_transition - self.ci_dec[j]) / x[j]) * t + self.ci_dec[j]
 
         elif(t > self.t_prime[j] and self.t_prime[j] > -1) :
             return beta_decar[j] * (t - self.t_prime[j]) + cout_transition
@@ -169,6 +188,9 @@ class Cinetique:
         return cout_transition
 
     def cout_car(self, t, x, j):
+
+        x = x_to_bnds(x)
+
         if(t < x[0]) :
             _, i_trans = self.index_transition(x[0], x)
             cout_transition = x[m + i_trans - 1]
@@ -184,13 +206,13 @@ class Cinetique:
             if(i_trans == m) :
                 return beta_car[j] * (t - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) + cout_transition
 
-            return ((x[m + i_trans] - cout_transition) / (x[i_trans] - x[i_trans - 1])) * (t - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) + cout_transition
+            return ((x[m + i_trans] - cout_transition) / (x[i_trans] - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) * (t - max([self.t_prime[k] for k in range(i_trans_debut - 1, i_trans)])) + cout_transition)
 
     def cout_car_nat(self, t, j):
         return beta_car[j] * t + ci_car[j]
 
     def cout_dec_nat(self,t, j):
-        return beta_decar[j] * t + ci_decar[j]
+        return beta_decar[j] * t + self.ci_dec[j]
 
     def taxes_car(self, t, x, j):
         return self.cout_car(t, x, j) - self.cout_car_nat(t, j)

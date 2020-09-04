@@ -2,12 +2,12 @@ from N_techno.Cinetique import *
 from scipy.integrate import trapz
 
 class Calcul_trajectoire :
-    def __init__(self, x):
+    def __init__(self, x, ci):
         self.x = x
-        self.cinetique = Cinetique()
+        self.cinetique = Cinetique(ci)
 
     def tableau_evol(self):
-        temps = [i for i in np.arange(0, 100, 0.1)]
+        temps = [i for i in np.arange(0, 60.1, 0.1)]
 
         techno_dec = [[] for i in range(m)]
         techno_car = [[] for i in range(n - m)]
@@ -17,6 +17,7 @@ class Calcul_trajectoire :
         c_nat_carb = [[] for i in range(n - m)]
         demande = []
         for t in temps:
+
             demande.append(self.cinetique.cinetique_demande(t))
             self.cinetique.mix_instant_t(t, self.x)
             self.cinetique.last_demand = self.cinetique.cinetique_demande(t)
@@ -37,7 +38,9 @@ class Calcul_trajectoire :
         return sum([trapz(techno_car[j], temps) for j in range(n-m)])
 
     def surcout_trajectoire(self):
+
         temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
+
         S = 0
         surc_taxe_carb = np.multiply(taxes_carb, taxes_carb)
         surc_taxe_dec = np.multiply(taxes_decar, taxes_decar)
@@ -48,3 +51,11 @@ class Calcul_trajectoire :
 
         return S
 
+
+    def surcout_trajectoire_ref(self):
+        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
+        S = 0
+        integrand_chal_lat = np.multiply(c_nat_carb, np.subtract([np.multiply(p_0[j], demande) for j in range(n-m)], techno_car))
+        S += sum([trapz(integrand_chal_lat[j], temps) for j in range(n-m)])
+
+        return S
