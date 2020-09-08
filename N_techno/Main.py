@@ -67,8 +67,7 @@ def main() :
 
     jobs = []
 
-    for i in range(10):
-    #for i in range(len(sigma)) :
+    for i in range(len(sigma)) :
         job = pool.apply_async(worker, (i, q, bud_surc, x_solution))
         jobs.append(job)
 
@@ -107,9 +106,9 @@ def main() :
         f.write(res)
         f.flush()
 
-    plot = Plot(temps, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, ci_decar_bis, ordre_dec, X_jbis, X_j0bis, 'test')
-    plot.plot()
-    plt.show()
+    # plot = Plot(temps, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, ci_decar_bis, ordre_dec, X_jbis, X_j0bis, 'test')
+    # plot.plot()
+    # plt.show()
 
 
 if __name__ == '__main__':
