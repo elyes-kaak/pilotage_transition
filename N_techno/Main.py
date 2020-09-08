@@ -1,6 +1,6 @@
 from itertools import permutations
-from N_techno.Parametres import *
-from N_techno.Methodes import *
+from Parametres import *
+from Methodes import *
 import time
 import multiprocessing as mp
 import sys
@@ -67,7 +67,8 @@ def main() :
 
     jobs = []
 
-    for i in range(len(sigma)) :
+    for i in range(10):
+    #for i in range(len(sigma)) :
         job = pool.apply_async(worker, (i, q, bud_surc, x_solution))
         jobs.append(job)
 
