@@ -1,6 +1,6 @@
 from itertools import permutations
-from N_techno.Parametres import *
-from N_techno.Methodes import *
+from Parametres import *
+from Methodes import *
 import time
 import sys
 

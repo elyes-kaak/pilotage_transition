@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib import rc
-from N_techno.Calcul_trajectoire import *
+from Calcul_trajectoire import *
 
 rc('text', usetex=True)
 rc('font',**{'family':'serif','serif':['Computer Modern Roman']})

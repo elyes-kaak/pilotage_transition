@@ -1,7 +1,7 @@
-from N_techno.Calcul_trajectoire import *
-from N_techno.Contraintes import *
-from N_techno.Optim import *
-from N_techno.Plot import *
+from Calcul_trajectoire import *
+from Contraintes import *
+from Optim import *
+from Plot import *
 from functools import partial
 
 class Methodes :

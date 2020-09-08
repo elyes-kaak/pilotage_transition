@@ -1,4 +1,4 @@
-from N_techno.Cinetique import *
+from Cinetique import *
 from scipy.integrate import trapz
 
 class Calcul_trajectoire :

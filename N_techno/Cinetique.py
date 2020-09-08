@@ -1,5 +1,5 @@
 import scipy.integrate as integrate
-from N_techno.Parametres import *
+from Parametres import *
 from scipy.optimize import fsolve
 import math
 
