@@ -51,6 +51,14 @@ class Methodes :
         res = out + 'Emissions de la solution = ' + str(int(budget)) + '\n'
         res = res + 'Surcout : ' + str(int(surcout)) + '\n'
 
+        if(contraintes.check_contr(x) == False) :
+            budget = 1000000000
+            surcout = 1000000000
+            res = res + 'Contraintes non respectées \n'
+
+        else :
+            res = res + 'Contraintes respectées \n'
+
         return budget, surcout, x, res
 
     def methode_emissions(self, ci, xj) :
@@ -88,5 +96,13 @@ class Methodes :
 
         res = out + 'Emissions de la solution = ' + str(int(budget)) + '\n'
         res = res + 'Surcout : ' + str(int(surcout)) + '\n'
+
+        if (contraintes.check_contr(x) == False):
+            budget = 1000000000
+            surcout = 1000000000
+            res = res + 'Contraintes non respectées \n'
+
+        else:
+            res = res + 'Contraintes respectées \n'
 
         return budget, surcout, x, res

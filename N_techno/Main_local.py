@@ -93,7 +93,7 @@ for k in range(m):
     X_j0bis[k] = X_j_0[sigma[index_min][k]]
 
 
-temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = Calcul_trajectoire(x0, ci_decar_bis, X_jbis).tableau_evol()
+temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = Calcul_trajectoire(x, ci_decar_bis, X_jbis).tableau_evol()
 
 ordre_dec = []
 for k in range(m):

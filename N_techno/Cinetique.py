@@ -2,7 +2,8 @@ import scipy.integrate as integrate
 from Parametres import *
 from scipy.optimize import fsolve
 import math
-
+import warnings
+warnings.filterwarnings("error")
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 
@@ -167,7 +168,11 @@ class Cinetique:
     def x_car_ligne(self, t, x, j, i):
         if(t <= T_life[j]):
             x_ini = self.x_car_ini[j]
+            if(x[i] >= T_life[j]) :
+                x[i] = T_life[j] - 0.01
+
             return (x_ini - X_jF[j]) * ((T_life[j] - t) / (T_life[j] - x[i])) ** (x[2*m + j] / x[m + i]) + X_jF[j]
+
 
         return X_jF[j]
 

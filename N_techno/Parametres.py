@@ -3,18 +3,18 @@ import numpy as np
 # Paramètres globaux
 T_life = [30, 30, 30]#, 60]   # durées de vie des techno carbonées
 demande_ini = 440   # demande énergétique
-X_j = [20, 1000, 50, 100, 1000] # productions maximales des techno décarbonées
+X_j = [20, 50, 1000, 100, 1000] # productions maximales des techno décarbonées
 X_jF = [240, 0.01, 0.01] # valeurs finales des techno carbonées
 
-X_j_0 = [62, 6, 0, 2, 17] # productions initiales des technos décarbonées
+X_j_0 = [62, 0, 6, 2, 17] # productions initiales des technos décarbonées
 ci_car = [56.42, 65.18, 85.77] # coûts initiaux (variables) des techno carbonées
 
 p_0 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
 p_1 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
 
-ci_decar = [75, 286.62, 79.67, 120, 116.945] # coûts initiaux des techno décarbonées
+ci_decar = [75, 79.67, 286.62, 120, 116.945] # coûts initiaux des techno décarbonées
 
-type_dec = ['Hydro', 'Solaire', 'Biogaz', 'Biomasse', 'Eolien']
+type_dec = ['Hydro', 'Biogaz', 'Solaire', 'Biomasse', 'Eolien']
 type_car = ['Nucleaire', 'Charbon', 'Gaz']
 
 beta_car = [0, 0, 0]
@@ -26,7 +26,7 @@ m = len(type_dec) # nombre total de technologies décarbonées
 # Limites
 b2 = (1, 10000)   # Limites de C
 b3 = (1, 10000)    # Limites de K
-b1 = (1, min(T_life) - 0.01)    # Limites de T_i
+b1 = (1, min(T_life))    # Limites de T_i
 
 
 # Valeurs initiales
