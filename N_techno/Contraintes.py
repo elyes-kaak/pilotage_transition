@@ -14,11 +14,3 @@ class Contraintes:
 
         self.contr.append({'type' : type, 'fun' : fonc_contrainte})
 
-
-    def check_contr(self, x):
-        for elem in self.contr :
-            if(elem['fun'](x) < 0):
-                return False
-
-        return True
-

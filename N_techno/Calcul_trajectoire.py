@@ -1,5 +1,6 @@
 from Cinetique import *
 from scipy.integrate import trapz
+from numpy import diff
 
 class Calcul_trajectoire :
     def __init__(self, x, ci, xj):
@@ -36,12 +37,12 @@ class Calcul_trajectoire :
     def budget_carbone(self):
         temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
         t_f = self.cinetique.t_f
-        return sum([trapz(techno_car[j], temps) for j in range(n-m)])
+        return sum([trapz(techno_car[j], temps) for j in range(1, n-m)])
 
     def budget_carbone_ref(self):
         temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
 
-        return sum([trapz(techno_car[j], temps) for j in range(n-m)])
+        return sum([trapz(techno_car[j], temps) for j in range(1, n-m)])
 
     def surcout_trajectoire(self):
 
@@ -69,5 +70,29 @@ class Calcul_trajectoire :
     def val_finale_car(self, j):
         temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
                                                                      c_nat_carb], demande = self.tableau_evol()
-
         return techno_car[j][-1]
+
+    def ecart_demande(self):
+        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
+                                                                     c_nat_carb], demande = self.tableau_evol()
+        ecart = []
+        for i in range(len(temps)):
+            S = 0
+            for j in range(m):
+                S += techno_dec[j][i]
+            for j in range(n - m):
+                S += techno_car[j][i]
+            ecart.append(abs(demande[i] - S))
+
+        return max(ecart)
+
+    def derivee(self):
+        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
+                                                                     c_nat_carb], demande = self.tableau_evol()
+        maxi = -100000
+        for elem in techno_car :
+            maxi = max(maxi, max(np.abs(diff(elem)/diff(temps))))
+        for elem in techno_dec :
+            maxi = max(maxi, max(np.abs(diff(elem) / diff(temps))))
+
+        return maxi

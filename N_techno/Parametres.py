@@ -1,20 +1,20 @@
 import numpy as np
 
 # Paramètres globaux
-T_life = [30, 30, 30]#, 60]   # durées de vie des techno carbonées
+T_life = [20, 30, 30]#, 60]   # durées de vie des techno carbonées
 demande_ini = 440   # demande énergétique
-X_j = [20, 50, 1000, 100, 1000] # productions maximales des techno décarbonées
-X_jF = [240, 0.01, 0.01] # valeurs finales des techno carbonées
+X_j = [1000, 20, 50, 1000, 100] # productions maximales des techno décarbonées
+X_jF = [240, 0, 0] # valeurs finales des techno carbonées
 
-X_j_0 = [62, 0, 6, 2, 17] # productions initiales des technos décarbonées
+X_j_0 = [17, 62, 0, 6, 2] # productions initiales des technos décarbonées
 ci_car = [56.42, 65.18, 85.77] # coûts initiaux (variables) des techno carbonées
 
 p_0 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
 p_1 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
 
-ci_decar = [75, 79.67, 286.62, 120, 116.945] # coûts initiaux des techno décarbonées
+ci_decar = [116.945, 75, 79.67, 286.62, 120] # coûts initiaux des techno décarbonées
 
-type_dec = ['Hydro', 'Biogaz', 'Solaire', 'Biomasse', 'Eolien']
+type_dec = ['Eolien', 'Hydro', 'Biogaz', 'Solaire', 'Biomasse']
 type_car = ['Nucleaire', 'Charbon', 'Gaz']
 
 beta_car = [0, 0, 0]
@@ -23,18 +23,22 @@ beta_decar = [0, 0, 0, 0, 0]
 n = len(type_dec) + len(type_car) # nombre total de technologies (carbonées et décarbonées)
 m = len(type_dec) # nombre total de technologies décarbonées
 
+t_f = 30 # instant de fin de transition
+
 # Limites
-b2 = (1, 10000)   # Limites de C
-b3 = (1, 10000)    # Limites de K
-b1 = (1, min(T_life))    # Limites de T_i
+b2 = ((1, 10000),)   # Limites de C
+b3 = ((1, 10000),)    # Limites de K
+b1 = ((1, t_f),)    # Limites de T_i
+bnds = list(m * b1 + m * b2 + (n-m) * b3)
 
 
 # Valeurs initiales
 x0 = np.array([])
 
-x0 = np.append(x0, [5, 10, 15, 20, 25])  # valeur initiale de t_i
-x0 = np.append(x0, [70, 60, 55, 50, 40])    # valeur initiale de c_i
-x0 = np.append(x0, [100, 220, 250])    # valeur initiale de k_j
+x0 = np.append(x0, [1, 1, 1, 1, 1])  # valeur initiale de t_i
+x0 = np.append(x0, [10, 10, 10, 10, 10])    # valeur initiale de c_i
+x0 = np.append(x0, [100, 100, 100])    # valeur initiale de k_j
+
 
 x_ref = np.array([])
 
@@ -45,6 +49,8 @@ x_ref = np.append(x_ref, [100, 220, 250])    # valeur initiale de k_j
 # Contraintes
 max_budget_carbone = 13000
 max_surcout = 10000000
+max_derivee = 250
+max_ecart_demande = 0.1
 
 pas_temps = 0.1
 max_temps = 30.1

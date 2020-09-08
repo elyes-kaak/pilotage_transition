@@ -33,14 +33,26 @@ class Plot :
         self.fig.set_size_inches((12, 5), forward=False)
         self.ax1.plot(self.t, self.demande, 'r-', label = r'Demande \'energ\'etique')
 
+
         for i in range(m):
             self.ax1.plot(self.t, self.techno_dec[i], label=r'Activit\'e de la technologie ' + self.ordre_dec[i])
 
         for i in range(n - m):
             self.ax1.plot(self.t, self.techno_car[i], label=r'Activit\'e de la technologie ' + type_car[i])
 
+        prod = []
+        for i in range(len(self.t)) :
+            S = 0
+            for j in range(m) :
+                S += self.techno_dec[j][i]
+            for j in range(n-m):
+                S += self.techno_car[j][i]
+            prod.append(S)
+
+        self.ax1.plot(self.t, prod, label=r'Production totale')
+
         self.ax1.set_title(r'\'Evolution de la demande et des activit\'es''\n'r'des diff\'erentes technologies')
-        self.ax1.set_ylabel(r'Demande ou activit\'e (MTep)')
+        self.ax1.set_ylabel(r'Demande ou activit\'e (TWh)')
         self.ax1.set_xlabel(r'Temps')
         self.ax1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol=2)
         self.ax1.grid(linestyle='--')
@@ -52,22 +64,22 @@ class Plot :
             self.ax2.plot(self.t, np.add(self.c_nat_carb[i], self.taxes_carb[i]), label=r'Co\^ut de la technologie ' + type_car[i])
 
         self.ax2.set_title(r'Evolution des co\^uts')
-        self.ax2.set_ylabel(r'Co\^uts (\$/MTep)')
+        self.ax2.set_ylabel(r'Co\^uts (\$/MWh)')
         self.ax2.set_xlabel(r'Temps')
         self.ax2.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol = 2)
         self.ax2.grid(linestyle = '--')
 
-        '''for i in range(m) :
-            self.ax3.plot(self.t, self.taxes_decar[i], label = r'Taxe ou subvention sur la technologie ' + self.ordre_dec[i])
-
-        for i in range(n - m) :
-            self.ax3.plot(self.t, self.taxes_carb[i], label = r'Taxe ou subvention sur la technologie ' + type_car[i])
-        self.ax3.set_title(r'Evolution des taxes')
-        self.ax3.set_ylabel(r'Co\^uts (\$/MTep)')
-        self.ax3.set_xlabel(r'Temps')
-        self.ax3.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol = 2)
-        self.ax3.grid(linestyle = '--')
-        self.fig.subplots_adjust(wspace=0.3)'''
+        # for i in range(m) :
+        #     self.ax3.plot(self.t, self.taxes_decar[i], label = r'Taxe ou subvention sur la technologie ' + self.ordre_dec[i])
+        #
+        # for i in range(n - m) :
+        #     self.ax3.plot(self.t, self.taxes_carb[i], label = r'Taxe ou subvention sur la technologie ' + type_car[i])
+        # self.ax3.set_title(r'Evolution des taxes')
+        # self.ax3.set_ylabel(r'Co\^uts (\$/MTep)')
+        # self.ax3.set_xlabel(r'Temps')
+        # self.ax3.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol = 2)
+        # self.ax3.grid(linestyle = '--')
+        # self.fig.subplots_adjust(wspace=0.3)
 
         t_i = ''
         k_i = ''

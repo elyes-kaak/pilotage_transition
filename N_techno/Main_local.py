@@ -107,3 +107,6 @@ print_x(x)
 plot = Plot(temps, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, ci_decar_bis, ordre_dec, X_jbis, X_j0bis, 'test')
 plot.plot()
 plt.show()
+
+
+
