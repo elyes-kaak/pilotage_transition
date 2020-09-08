@@ -10,7 +10,7 @@ class Optim:
         self.surcout = surcout
 
     def sol_optim(self):
-        return minimize(self.objectif, self.val_init, method='COBYLA', constraints=self.contraintes)#, options = {"disp": True})
+        return minimize(self.objectif, self.val_init, method='COBYLA', constraints=self.contraintes, options={'maxiter': 10000})
 
     def return_sol_optim(self):
 
