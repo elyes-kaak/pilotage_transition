@@ -1,0 +1,29 @@
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biogaz', 'Biomasse', 'Eolien']
+Initial Objective: 1566544.0833962127
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1286338.6174334665
+Emissions de la solution = 10766
+Surcout : 1286338
+Temps d'exécution : 45.6
+c_0= 70.91 c_1= 62.74 c_2= 55.97 c_3= 50.35 c_4= 41.22 
+t_0= 7.18 t_1= 15.46 t_2= 15.47 t_3= 21.73 t_4= 27.62 
+k_0= 99.9 k_1= 219.3 k_2= 249.82 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biogaz', 'Eolien', 'Biomasse']
+Initial Objective: 1565964.1905800963
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1307893.5884240891
+Emissions de la solution = 10603
+Surcout : 1307893
+Temps d'exécution : 50.01
+c_0= 71.46 c_1= 62.18 c_2= 55.83 c_3= 50.18 c_4= 41.17 
+t_0= 6.75 t_1= 15.32 t_2= 15.33 t_3= 21.88 t_4= 26.75 
+k_0= 100.14 k_1= 220.26 k_2= 249.79 
+
+killedLa solution du problème a un budget de 10766.26601581869 et un surcoût de 1286338.6174334665
+Elle est atteinte pour l'ordre suivant des technos décarbonées : ['Hydro', 'Solaire', 'Biogaz', 'Biomasse', 'Eolien']
+c_0= 70.91 c_1= 62.74 c_2= 55.97 c_3= 50.35 c_4= 41.22 
+t_0= 7.18 t_1= 15.46 t_2= 15.47 t_3= 21.73 t_4= 27.62 
+k_0= 99.9 k_1= 219.3 k_2= 249.82 
