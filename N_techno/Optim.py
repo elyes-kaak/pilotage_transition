@@ -10,18 +10,18 @@ class Optim:
         self.surcout = surcout
 
     def sol_optim(self):
-        return minimize(self.objectif, self.val_init, method='SLSQP', constraints=self.contraintes)
+        return minimize(self.objectif, self.val_init, method='COBYLA', constraints=self.contraintes)#, options = {"disp": True})
 
     def return_sol_optim(self):
 
-        print('Initial Objective: ' + str(self.objectif(self.val_init)))
+        res = 'Initial Objective: ' + str(self.objectif(self.val_init)) + '\n'
 
         solution = self.sol_optim()
 
         x = solution.x
 
-        print('Success: ', solution.success)
-        print('Message: ', solution.message)
-        print('Solution')
-        print('Final Objective: ' + str(self.objectif(x)))
-        return x
+        res = res + 'Success: ' + str(solution.success) + '\n'
+        res = res + 'Message: ' + str(solution.message) + '\n'
+
+        res = res + 'Final Objective: ' + str(self.objectif(x)) + '\n'
+        return x, res

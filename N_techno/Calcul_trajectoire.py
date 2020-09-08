@@ -2,12 +2,12 @@ from N_techno.Cinetique import *
 from scipy.integrate import trapz
 
 class Calcul_trajectoire :
-    def __init__(self, x, ci):
+    def __init__(self, x, ci, xj):
         self.x = x
-        self.cinetique = Cinetique(ci)
+        self.cinetique = Cinetique(ci, xj)
 
     def tableau_evol(self):
-        temps = [i for i in np.arange(0, 60.1, 0.1)]
+        temps = [i for i in np.arange(0, max_temps, pas_temps)]
 
         techno_dec = [[] for i in range(m)]
         techno_car = [[] for i in range(n - m)]
@@ -29,10 +29,16 @@ class Calcul_trajectoire :
                 techno_dec[j].append(self.cinetique.cinetique_techno_decar(t, self.x, j))
                 taxes_decar[j].append(self.cinetique.taxes_dec(t, self.x, j))
                 c_nat_decar[j].append(self.cinetique.cout_dec_nat(t, j))
+
         return temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande
 
 
     def budget_carbone(self):
+        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
+        t_f = self.cinetique.t_f
+        return sum([trapz(techno_car[j], temps) for j in range(n-m)])
+
+    def budget_carbone_ref(self):
         temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
 
         return sum([trapz(techno_car[j], temps) for j in range(n-m)])
@@ -48,7 +54,7 @@ class Calcul_trajectoire :
         S += sum([trapz(surc_taxe_carb[j], temps) for j in range(n-m)])
         S += sum([trapz(surc_taxe_dec[j], temps) for j in range(m)])
         S += sum([trapz(integrand_chal_lat[j], temps) for j in range(n-m)])
-
+        t_f = self.cinetique.t_f
         return S
 
 
@@ -59,3 +65,9 @@ class Calcul_trajectoire :
         S += sum([trapz(integrand_chal_lat[j], temps) for j in range(n-m)])
 
         return S
+
+    def val_finale_car(self, j):
+        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
+                                                                     c_nat_carb], demande = self.tableau_evol()
+
+        return techno_car[j][-1]

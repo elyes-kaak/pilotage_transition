@@ -4,12 +4,12 @@ class Contraintes:
 
     def new_contr_max(self, fonction, maxi, type = 'ineq'):
         def fonc_contrainte(x):
-            return maxi-fonction(x)
+            return maxi - fonction(x)
 
         self.contr.append({'type' : type, 'fun' : fonc_contrainte})
 
     def new_contr_min(self, fonction, mini, type = 'ineq'):
         def fonc_contrainte(x):
-            return fonction(x)-mini
+            return fonction(x) - mini
 
         self.contr.append({'type' : type, 'fun' : fonc_contrainte})

@@ -8,7 +8,7 @@ import math
 
 class Cinetique:
 
-    def __init__(self, ci):
+    def __init__(self, ci, xj):
         self.t_prime = [-1 for i in range(m)]
         self.index_tra = 0
         self.index_tra_debut = 0
@@ -20,14 +20,15 @@ class Cinetique:
         self.x_car_ini = [p_0[j] * self.cinetique_demande(0) for j in range(n - m)]
         self.t_f = False
         self.ci_dec = ci
+        self.xj = xj
 
     def cmp(self, a, b):
         return (not(a > b) and not(a < b))
 
     def cinetique_demande(self, t):
-        if(t <= 34) :
-            return demande_ini - 0.0016 * t**4 + 0.1097 * t**3 - 1.9561 * t**2 + 5.9101 * t
-        else :
+        if (t <= 34):
+            return demande_ini - 0.0016 * t ** 4 + 0.1097 * t ** 3 - 1.9561 * t ** 2 + 5.9101 * t
+        else:
             return self.cinetique_demande(34)
 
     def index_transition(self, t, x):
@@ -48,7 +49,8 @@ class Cinetique:
         return debut, fin
 
     def mix_instant_t(self, t, x):
-        x = x_to_bnds(x)
+        for i in range(len(x)):
+            x[i] = round(x[i], 2)
 
         T_life_atteint = [t > T_life[j] for j in range(n-m)]
 
@@ -89,8 +91,7 @@ class Cinetique:
 
         else :
             if (self.cmp([self.x_dec[k] for k in range(self.index_tra_debut - 1, self.index_tra)],
-                         [X_j[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
-
+                         [self.xj[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
                 for j in range(n-m) :
                     if (T_life_atteint[j]):
                         self.x_car[j] = X_jF[j]
@@ -108,22 +109,29 @@ class Cinetique:
                                          sum([self.x_dec[k] for k in range(self.index_tra_debut - 1)]) -
                                          sum(self.x_car[k] for k in range(n-m))))
 
-                    if(self.x_dec[j] > X_j[j]) :
+                    if(self.x_dec[j] > self.xj[j]) :
                         X_j_atteint.append(j)
                         if(self.t_prime[j] == -1):
                             self.t_prime[j] = t
 
                 if (len(X_j_atteint) > 0):
-                    for j in range(self.index_tra_debut - 1, self.index_tra):
-                        if j in X_j_atteint :
-                            self.x_dec[j] = X_j[j]
-                        else :
-                            self.x_dec[j] = max(0,
-                                1 / (len(range(self.index_tra_debut - 1, self.index_tra)) - len(X_j_atteint)) * (
-                                                self.cinetique_demande(t) -
-                                                sum([self.x_dec[k] for k in range(self.index_tra_debut - 1)]) -
-                                                sum([X_j[k] for k in X_j_atteint]) -
-                                                sum(self.x_car[k] for k in range(n - m))))
+                    limites_dec_respectees = False
+                    while (limites_dec_respectees == False):
+                        limites_dec_respectees = True
+                        for j in range(self.index_tra_debut - 1, self.index_tra):
+                            if j in X_j_atteint :
+                                self.x_dec[j] = self.xj[j]
+                            else :
+                                self.x_dec[j] = max(0,
+                                    1 / (len(range(self.index_tra_debut - 1, self.index_tra)) - len(X_j_atteint)) * (
+                                                    self.cinetique_demande(t) -
+                                                    sum([self.x_dec[k] for k in range(self.index_tra_debut - 1)]) -
+                                                    sum([self.xj[k] for k in X_j_atteint]) -
+                                                    sum(self.x_car[k] for k in range(n - m))))
+                                if(self.x_dec[j] > self.xj[j]):
+                                    X_j_atteint.append(j)
+                                    limites_dec_respectees = False
+
 
                 if(sum(self.x_dec) > (self.cinetique_demande(t) - sum(X_jF))) :
                     self.t_f = True
@@ -133,7 +141,7 @@ class Cinetique:
                         self.x_dec[j] = (self.cinetique_demande(t) - sum(self.x_car)) * self.last_ratio_dec[j]
 
                 if (self.cmp([self.x_dec[k] for k in range(self.index_tra_debut - 1, self.index_tra)],
-                             [X_j[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
+                             [self.xj[k] for k in range(self.index_tra_debut - 1, self.index_tra)])):
                     for j in range(n - m):
                         if (T_life_atteint[j]):
                             self.x_car[j] = X_jF[j]
@@ -174,8 +182,6 @@ class Cinetique:
         return self.x_dec[i]
 
     def cout_dec(self, t, x, j):
-        x = x_to_bnds(x)
-
         _ , i_trans = self.index_transition(x[j], x)
 
         cout_transition = x[m + i_trans - 1]
@@ -188,8 +194,6 @@ class Cinetique:
         return cout_transition
 
     def cout_car(self, t, x, j):
-
-        x = x_to_bnds(x)
 
         if(t < x[0]) :
             _, i_trans = self.index_transition(x[0], x)
