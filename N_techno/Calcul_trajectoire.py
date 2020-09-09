@@ -1,3 +1,5 @@
+# -*-coding:Latin-1 -*-
+
 from Cinetique import *
 from scipy.integrate import trapz
 from numpy import diff

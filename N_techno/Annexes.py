@@ -1,3 +1,5 @@
+# -*-coding:Latin-1 -*-
+
 import matplotlib.pyplot as plt
 from matplotlib import rc
 from Calcul_trajectoire import *

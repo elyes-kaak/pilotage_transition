@@ -1,18 +1,20 @@
+# -*-coding:Latin-1 -*-
+
 import numpy as np
 
-# ParamÃ¨tres globaux
-T_life = [20, 30, 30]#, 60]   # durÃ©es de vie des techno carbonÃ©es
-demande_ini = 440   # demande Ã©nergÃ©tique
-X_j = [1000, 20, 50, 1000, 100] # productions maximales des techno dÃ©carbonÃ©es
-X_jF = [240, 0, 0] # valeurs finales des techno carbonÃ©es
+# Paramètres globaux
+T_life = [20, 30, 30]#, 60]   # durées de vie des techno carbonées
+demande_ini = 440   # demande énergétique
+X_j = [1000, 20, 50, 1000, 100] # productions maximales des techno décarbonées
+X_jF = [240, 0, 0] # valeurs finales des techno carbonées
 
-X_j_0 = [17, 62, 0, 6, 2] # productions initiales des technos dÃ©carbonÃ©es
-ci_car = [56.42, 65.18, 85.77] # coÃ»ts initiaux (variables) des techno carbonÃ©es
+X_j_0 = [17, 62, 0, 6, 2] # productions initiales des technos décarbonées
+ci_car = [56.42, 65.18, 85.77] # coûts initiaux (variables) des techno carbonées
 
-p_0 = [0.9451, 0.0184, 0.0365] # part des technologies carbonÃ©es dans le mix initial
-p_1 = [0.9451, 0.0184, 0.0365] # part des technologies carbonÃ©es dans le mix initial
+p_0 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
+p_1 = [0.9451, 0.0184, 0.0365] # part des technologies carbonées dans le mix initial
 
-ci_decar = [116.945, 75, 79.67, 286.62, 120] # coÃ»ts initiaux des techno dÃ©carbonÃ©es
+ci_decar = [116.945, 75, 79.67, 286.62, 120] # coûts initiaux des techno décarbonées
 
 type_dec = ['Eolien', 'Hydro', 'Biogaz', 'Solaire', 'Biomasse']
 type_car = ['Nucleaire', 'Charbon', 'Gaz']
@@ -20,8 +22,8 @@ type_car = ['Nucleaire', 'Charbon', 'Gaz']
 beta_car = [0, 0, 0]
 beta_decar = [0, 0, 0, 0, 0]
 
-n = len(type_dec) + len(type_car) # nombre total de technologies (carbonÃ©es et dÃ©carbonÃ©es)
-m = len(type_dec) # nombre total de technologies dÃ©carbonÃ©es
+n = len(type_dec) + len(type_car) # nombre total de technologies (carbonées et décarbonées)
+m = len(type_dec) # nombre total de technologies décarbonées
 
 t_f = 30 # instant de fin de transition
 
