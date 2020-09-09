@@ -1,8 +1,12 @@
+# -*-coding:Latin-1 -*-
+
 from itertools import permutations
 from Parametres import *
 from Methodes import *
 import time
 import sys
+
+
 
 class Logger(object):
     def __init__(self):
@@ -23,8 +27,8 @@ trajectoire_ref = Calcul_trajectoire(x_ref)
 budget_ref = trajectoire_ref.budget_carbone_ref()
 surcout_ref = trajectoire_ref.surcout_trajectoire_ref()
 
-print('Budget de rÃ©fÃ©rence : ', budget_ref)
-print('Surcout de rÃ©fÃ©rence : ', surcout_ref)
+print('Budget de référence : ', budget_ref)
+print('Surcout de référence : ', surcout_ref)
 print()
 
 optim = Methodes()
@@ -33,7 +37,7 @@ budg, surc, x, res = optim.methode_surcout()
 end_time = time.time()
 
 print(res)
-print("Temps d'exÃ©cution : ", round(end_time - start_time, 2))
+print("Temps d'exécution : ", round(end_time - start_time, 2))
 print(print_x(x))
 
 trajectoire_sol = Calcul_trajectoire(x)
@@ -43,8 +47,8 @@ surcout = trajectoire_sol.surcout_trajectoire()
 ordre_dec = trajectoire_sol.ordre_dec
 
 print(ordre_dec)
-print('La solution du problÃ¨me a un budget de ', budget, ' et un surcoÃ»t de ', surcout)
-print("Elle est atteinte pour l'ordre suivant des technos dÃ©carbonÃ©es : ", ordre_dec)
+print('La solution du problème a un budget de ', budget, ' et un surcoût de ', surcout)
+print("Elle est atteinte pour l'ordre suivant des technos décarbonées : ", ordre_dec)
 print_x(x)
 
 '''plot = Plot(x, 'test')
