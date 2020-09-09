@@ -3,13 +3,13 @@ from Parametres import *
 from scipy.optimize import fsolve
 import math
 import warnings
-warnings.filterwarnings("error")
+#warnings.filterwarnings("error")
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 
 class Cinetique:
 
-    def __init__(self, ci, xj):
+    def __init__(self):
         self.t_prime = [-1 for i in range(m)]
         self.index_tra = 0
         self.index_tra_debut = 0
@@ -20,8 +20,9 @@ class Cinetique:
         self.x_car = [p_0[j] * self.cinetique_demande(0) for j in range(n-m)]
         self.x_car_ini = [p_0[j] * self.cinetique_demande(0) for j in range(n - m)]
         self.t_f = False
-        self.ci_dec = ci
-        self.xj = xj
+        self.ci_dec = np.array(ci_decar.copy())
+        self.xj = np.array(X_j.copy())
+        self.ordre_dec = np.array(type_dec.copy())
 
     def cmp(self, a, b):
         return (not(a > b) and not(a < b))
@@ -50,8 +51,17 @@ class Cinetique:
         return debut, fin
 
     def mix_instant_t(self, t, x):
-        for i in range(len(x)):
-            x[i] = round(x[i], 2)
+        instant_tra = np.array(x[0 : m])
+        cout_tra = np.array(x[m : 2*m])
+        k_car = x[2*m : n+m]
+
+        perm = sorted(range(len(instant_tra)), key=lambda k: instant_tra[k])
+
+        x = np.around(np.concatenate((instant_tra[perm], cout_tra[perm], k_car)), decimals = 2)
+
+        self.ordre_dec = np.array(type_dec.copy())[perm]
+        self.xj = np.array(X_j.copy())[perm]
+        self.ci_dec = np.array(ci_decar.copy())[perm]
 
         T_life_atteint = [t > T_life[j] for j in range(n-m)]
 

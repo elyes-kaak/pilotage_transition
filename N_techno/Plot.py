@@ -7,23 +7,21 @@ rc('font',**{'family':'serif','serif':['Computer Modern Roman']})
 
 class Plot :
 
-    def __init__(self, t, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, ci, ordre_dec, xj, xj0, description = 'test'):
+    def __init__(self, x, description = 'test'):
 
         self.fig, (self.ax1, self.ax2) = plt.subplots(nrows = 1, ncols = 2)
-        self.t = t
-        self.taxes_decar = taxes_decar
-        self.taxes_carb = taxes_carb
-        self.demande = demande
-        self.c_nat_decar = c_nat_decar
-        self.c_nat_carb = c_nat_carb
+        self.trajectoire = Calcul_trajectoire(x)
+        self.t = self.trajectoire.temps
+        self.taxes_decar = self.trajectoire.taxes_decar
+        self.taxes_carb = self.trajectoire.taxes_carb
+        self.demande = self.trajectoire.demande
+        self.c_nat_decar = self.trajectoire.c_nat_decar
+        self.c_nat_carb = self.trajectoire.c_nat_carb
         self.description = description
-        self.techno_dec = techno_dec
-        self.techno_car = techno_car
+        self.techno_dec = self.trajectoire.techno_dec
+        self.techno_car = self.trajectoire.techno_car
         self.x = x
-        self.ci = ci
-        self.xj = xj
-        self.xj0 = xj0
-        self.ordre_dec = ordre_dec
+        self.ordre_dec = self.trajectoire.ordre_dec
         '''for i in range(len(t)):
             self.demande[i] += sum(xj0)
             for j in range(m):
@@ -86,6 +84,14 @@ class Plot :
         c_i = ''
         ordre_techno = ''
 
+        instant_tra = np.array(self.x[0: m])
+        cout_tra = np.array(self.x[m: 2 * m])
+        k_car = self.x[2 * m: n + m]
+
+        perm = sorted(range(len(instant_tra)), key=lambda k: instant_tra[k])
+
+        self.x = np.around(np.concatenate((instant_tra[perm], cout_tra[perm], k_car)), decimals=2)
+
         for i in range(m) :
             t_i = t_i + 't_' + str(i) + '= ' + str(int(self.x[i])) + ' '
             c = self.x[m + i]
@@ -100,8 +106,8 @@ class Plot :
             k_i = k_i + 'k_' + str(i) + '= ' + str(int(self.x[2*m + i])) + ' '
 
         mdata = {'Description': t_i + c_i + k_i
-                                + '\n Emissions = ' + str(int(Calcul_trajectoire(self.x, self.ci, self.xj).budget_carbone()))
-                                + ' Surcout = ' + str(int(Calcul_trajectoire(self.x, self.ci, self.xj).surcout_trajectoire()))
+                                + '\n Emissions = ' + str(int(self.trajectoire.budget_carbone()))
+                                + ' Surcout = ' + str(int(self.trajectoire.surcout_trajectoire()))
                                 + ' max_surcout = ' + str(max_surcout)
                                 + ' max_budget = ' + str(max_budget_carbone)
                                 + ' Ordre des techno = ' + ordre_techno}

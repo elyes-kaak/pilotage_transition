@@ -26,7 +26,7 @@ m = len(type_dec) # nombre total de technologies décarbonées
 t_f = 30 # instant de fin de transition
 
 # Limites
-b2 = ((1, 10000),)   # Limites de C
+b2 = ((1, 500),)   # Limites de C
 b3 = ((1, 10000),)    # Limites de K
 b1 = ((1, t_f),)    # Limites de T_i
 bnds = list(m * b1 + m * b2 + (n-m) * b3)
@@ -35,7 +35,7 @@ bnds = list(m * b1 + m * b2 + (n-m) * b3)
 # Valeurs initiales
 x0 = np.array([])
 
-x0 = np.append(x0, [1, 1, 1, 1, 1])  # valeur initiale de t_i
+x0 = np.append(x0, [1, 10, 15, 20, 25])  # valeur initiale de t_i
 x0 = np.append(x0, [10, 10, 10, 10, 10])    # valeur initiale de c_i
 x0 = np.append(x0, [100, 100, 100])    # valeur initiale de k_j
 

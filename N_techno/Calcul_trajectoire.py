@@ -3,11 +3,9 @@ from scipy.integrate import trapz
 from numpy import diff
 
 class Calcul_trajectoire :
-    def __init__(self, x, ci, xj):
+    def __init__(self, x):
         self.x = x
-        self.cinetique = Cinetique(ci, xj)
-
-    def tableau_evol(self):
+        self.cinetique = Cinetique()
         temps = [i for i in np.arange(0, max_temps, pas_temps)]
 
         techno_dec = [[] for i in range(m)]
@@ -31,68 +29,69 @@ class Calcul_trajectoire :
                 taxes_decar[j].append(self.cinetique.taxes_dec(t, self.x, j))
                 c_nat_decar[j].append(self.cinetique.cout_dec_nat(t, j))
 
-        return temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande
-
+        self.temps = temps 
+        self.techno_dec = techno_dec 
+        self.techno_car = techno_car
+        self.taxes_decar = techno_dec
+        self.taxes_carb = techno_car
+        self.c_nat_decar = c_nat_decar
+        self.c_nat_carb = c_nat_carb
+        self.demande = demande
+        self.ordre_dec = self.cinetique.ordre_dec
 
     def budget_carbone(self):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
-        t_f = self.cinetique.t_f
-        return sum([trapz(techno_car[j], temps) for j in range(1, n-m)])
+        return sum([trapz(self.techno_car[j], self.temps) for j in range(1, n-m)])
 
     def budget_carbone_ref(self):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
-
-        return sum([trapz(techno_car[j], temps) for j in range(1, n-m)])
+        return sum([trapz(self.techno_car[j], self.temps) for j in range(1, n-m)])
 
     def surcout_trajectoire(self):
-
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
+        '''for i in range(m - 1):
+            if(self.x[i] - self.x[i + 1] > 0):
+                return 1e13'''
 
         S = 0
-        surc_taxe_carb = np.multiply(taxes_carb, taxes_carb)
-        surc_taxe_dec = np.multiply(taxes_decar, taxes_decar)
-        integrand_chal_lat = np.multiply(c_nat_carb, np.subtract([np.multiply(p_0[j], demande) for j in range(n-m)], techno_car))
-        S += sum([trapz(surc_taxe_carb[j], temps) for j in range(n-m)])
-        S += sum([trapz(surc_taxe_dec[j], temps) for j in range(m)])
-        S += sum([trapz(integrand_chal_lat[j], temps) for j in range(n-m)])
-        t_f = self.cinetique.t_f
+        surc_taxe_carb = np.multiply(self.taxes_carb, self.techno_car)
+        surc_taxe_dec = np.multiply(self.taxes_decar, self.techno_dec)
+        integrand_chal_lat = np.multiply(self.c_nat_carb, np.subtract([np.multiply(p_0[j], self.demande) for j in range(n-m)], self.techno_car))
+        S += sum([trapz(surc_taxe_carb[j], self.temps) for j in range(n-m)])
+        S += sum([trapz(surc_taxe_dec[j], self.temps) for j in range(m)])
+        S += sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
+
+        '''if(self.derivee() > max_derivee or self.budget_carbone() > max_budget_carbone
+           or self.ecart_demande() > max_ecart_demande) :
+            return 1e13'''
+
         return S
 
 
     def surcout_trajectoire_ref(self):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = self.tableau_evol()
         S = 0
-        integrand_chal_lat = np.multiply(c_nat_carb, np.subtract([np.multiply(p_0[j], demande) for j in range(n-m)], techno_car))
-        S += sum([trapz(integrand_chal_lat[j], temps) for j in range(n-m)])
+        integrand_chal_lat = np.multiply(self.c_nat_carb, np.subtract([np.multiply(p_0[j], self.demande) for j in range(n-m)], self.techno_car))
+        S += sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
 
         return S
 
     def val_finale_car(self, j):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
-                                                                     c_nat_carb], demande = self.tableau_evol()
-        return techno_car[j][-1]
+        return self.techno_car[j][-1]
 
     def ecart_demande(self):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
-                                                                     c_nat_carb], demande = self.tableau_evol()
         ecart = []
-        for i in range(len(temps)):
+        for i in range(len(self.temps)):
             S = 0
             for j in range(m):
-                S += techno_dec[j][i]
+                S += self.techno_dec[j][i]
             for j in range(n - m):
-                S += techno_car[j][i]
-            ecart.append(abs(demande[i] - S))
+                S += self.techno_car[j][i]
+            ecart.append(abs(self.demande[i] - S))
 
         return max(ecart)
 
     def derivee(self):
-        temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar,
-                                                                     c_nat_carb], demande = self.tableau_evol()
         maxi = -100000
-        for elem in techno_car :
-            maxi = max(maxi, max(np.abs(diff(elem)/diff(temps))))
-        for elem in techno_dec :
-            maxi = max(maxi, max(np.abs(diff(elem) / diff(temps))))
+        for elem in self.techno_car :
+            maxi = max(maxi, max(np.abs(diff(elem)/diff(self.temps))))
+        for elem in self.techno_dec :
+            maxi = max(maxi, max(np.abs(diff(elem) / diff(self.temps))))
 
         return maxi
