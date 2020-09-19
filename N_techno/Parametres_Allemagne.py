@@ -19,7 +19,7 @@ ci_decar = [105.81, 125, 177.5, 328.45, 90] # coûts initiaux des techno décarb
 type_dec = ['Eolien', 'Hydro', 'Biogaz', 'Solaire', 'Biomasse']
 type_car = ['Nucleaire', 'Charbon', 'Gaz', 'Petrole']
 
-beta_car = [0, 0, 0]
+beta_car = [0, 0, 0, 0]
 beta_decar = [0, 0, 0, 0, 0]
 
 n = len(type_dec) + len(type_car) # nombre total de technologies (carbonées et décarbonées)
