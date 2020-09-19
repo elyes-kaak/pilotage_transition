@@ -1,4 +1,5 @@
-# -*-coding:Latin-1 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from Cinetique import *
 from scipy.integrate import trapz

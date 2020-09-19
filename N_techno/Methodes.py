@@ -1,4 +1,5 @@
-# -*-coding:Latin-1 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from Calcul_trajectoire import *
 from Contraintes import *
@@ -27,7 +28,7 @@ class Methodes :
         return Calcul_trajectoire(x).budget_carbone()
 
     def methode_surcout(self) :
-        # Définition des contraintes : temps, budget et surcoût
+        # DÃ©finition des contraintes : temps, budget et surcoÃ»t
         contraintes = Contraintes()
 
         contraintes.new_contr(partial(self.f_budget), -max_budget_carbone, max_budget_carbone, 'non_lin')
@@ -45,7 +46,7 @@ class Methodes :
         for i in range(2 * m, n + m):
             contraintes.new_contr(partial(self.f_bnds, index=i), min(min(b3)), max(max(b3)), 'non_lin')
 
-        # Résolution du problème d'optimisation (fonction objectif correspondant à la minimisation du surcoût sur la trajectoire
+        # RÃ©solution du problÃ¨me d'optimisation (fonction objectif correspondant Ã  la minimisation du surcoÃ»t sur la trajectoire
         optimisation = Optim(partial(self.f_surcout), contraintes.contr, self.x0)
 
         x, out, success = optimisation.return_sol_optim()
@@ -61,7 +62,7 @@ class Methodes :
 
     def methode_emissions(self) :
 
-        # Définition des contraintes : temps, budget et surcoût
+        # DÃ©finition des contraintes : temps, budget et surcoÃ»t
         contraintes = Contraintes()
 
         contraintes.new_contr(partial(self.f_surcout), -max_surcout, max_surcout, 'non_lin')
@@ -80,7 +81,7 @@ class Methodes :
             contraintes.new_contr(partial(self.f_bnds, index=i), min(min(b3)), max(max(b3)), 'non_lin')
 
 
-        # Résolution du problème d'optimisation (fonction objectif correspondant à la minimisation de la valeur finale de x_1
+        # RÃ©solution du problÃ¨me d'optimisation (fonction objectif correspondant Ã  la minimisation de la valeur finale de x_1
         optimisation = Optim(partial(self.f_budget), contraintes.contr, x0)
 
         x, out, success = optimisation.return_sol_optim()

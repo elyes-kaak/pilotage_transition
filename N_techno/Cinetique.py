@@ -1,4 +1,5 @@
-# -*-coding:Latin-1 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import scipy.integrate as integrate
 from Parametres import *
@@ -7,7 +8,7 @@ import math
 import warnings
 #warnings.filterwarnings("error")
 
-# Cinétique à la ligne de transition (entre t_1 et t_car)
+# CinÃ©tique Ã  la ligne de transition (entre t_1 et t_car)
 
 class Cinetique:
 
