@@ -1,5 +1,5 @@
 from scipy.optimize import minimize, shgo, NonlinearConstraint, differential_evolution
-from Parametres_Allemagne import *
+from Parametres import *
 import math
 
 Nfeval = 1

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from Parametres_Allemagne import *
+from Parametres import *
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 

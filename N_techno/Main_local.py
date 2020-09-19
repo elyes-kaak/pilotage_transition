@@ -6,7 +6,7 @@ from Methodes import *
 import time
 import sys
 
-nom = 'results-Diff-Allemagne-Diff-evol'
+nom = 'results-France-Diff-evol'
 
 class Logger(object):
     def __init__(self):
@@ -31,33 +31,23 @@ def main():
     print('Surcout de référence : ', surcout_ref)
     print()
 
-    for i in range(1) :
-        # Valeurs initiales
-        x0 = np.array([])
-        
-        t_i = np.random.uniform(min(min(b1)), max(max(b1)), m)
-        c_i = np.random.uniform(min(min(b2)), max(max(b2)), m)
-        k_j = np.random.uniform(min(min(b3)), max(max(b3)), n-m)
-        x0 = np.append(x0, t_i)  # valeur initiale de t_i
-        x0 = np.append(x0, c_i)    # valeur initiale de c_i
-        x0 = np.append(x0, k_j)    # valeur initiale de k_j
 
-        optim = Methodes(x0)
-        start_time = time.time()
-        budget, surcout, x, res = optim.methode_emissions()
-        end_time = time.time()
+    optim = Methodes(x0)
+    start_time = time.time()
+    budget, surcout, x, res = optim.methode_emissions()
+    end_time = time.time()
 
-        print(res)
-        print("Temps d'exécution : ", round(end_time - start_time, 2))
-        print(print_x(x))
+    print(res)
+    print("Temps d'exécution : ", round(end_time - start_time, 2))
+    print(print_x(x))
 
-        trajectoire_sol = Calcul_trajectoire(x)
-        ordre_dec = trajectoire_sol.ordre_dec
+    trajectoire_sol = Calcul_trajectoire(x)
+    ordre_dec = trajectoire_sol.ordre_dec
 
-        print(ordre_dec)
-        print('La solution du problème a un budget de ', budget, ' et un surcoût de ', surcout)
-        print("Elle est atteinte pour l'ordre suivant des technos décarbonées : ", ordre_dec)
-        print_x(x)
+    print(ordre_dec)
+    print('La solution du problème a un budget de ', budget, ' et un surcoût de ', surcout)
+    print("Elle est atteinte pour l'ordre suivant des technos décarbonées : ", ordre_dec)
+    print_x(x)
 
 
 def plot_resultat(x) :
