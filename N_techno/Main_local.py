@@ -34,7 +34,7 @@ def main():
 
     optim = Methodes(x0)
     start_time = time.time()
-    budget, surcout, x, res = optim.methode_emissions()
+    budget, surcout, x, res = optim.methode_surcout()
     end_time = time.time()
 
     print(res)
