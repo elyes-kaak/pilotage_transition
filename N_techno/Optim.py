@@ -15,7 +15,7 @@ class Optim:
 
     def callbackF(self, x, convergence = 0):
         global Nfeval
-        print(Nfeval, self.objectif(x))
+        print(Nfeval, self.objectif(x), x)
         Nfeval += 1
         return False
 
