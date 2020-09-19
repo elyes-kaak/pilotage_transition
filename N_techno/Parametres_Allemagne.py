@@ -39,14 +39,14 @@ x0 = np.array([])
 
 x0 = np.append(x0, [1, 10, 15, 20, 25])  # valeur initiale de t_i
 x0 = np.append(x0, [10, 10, 10, 10, 10])    # valeur initiale de c_i
-x0 = np.append(x0, [100, 100, 100])    # valeur initiale de k_j
+x0 = np.append(x0, [100, 100, 100, 100])    # valeur initiale de k_j
 
 
 x_ref = np.array([])
 
 x_ref = np.append(x_ref, [min(T_life) for i in range(m)])  # valeur initiale de t_i
 x_ref = np.append(x_ref, [70, 60, 55, 50, 45])    # valeur initiale de c_i
-x_ref = np.append(x_ref, [100, 220, 250])    # valeur initiale de k_j
+x_ref = np.append(x_ref, [100, 220, 250, 300])    # valeur initiale de k_j
 
 # Contraintes
 max_budget_carbone = 13000
