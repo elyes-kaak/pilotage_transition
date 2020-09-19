@@ -6,7 +6,7 @@ from Methodes import *
 import time
 import sys
 
-nom = 'results-France-Diff-evol'
+nom = 'results-Allemagne-Diff-evol'
 
 class Logger(object):
     def __init__(self):
@@ -34,7 +34,7 @@ def main():
 
     optim = Methodes(x0)
     start_time = time.time()
-    budget, surcout, x, res = optim.methode_surcout()
+    budget, surcout, x, res = optim.methode_emissions()
     end_time = time.time()
 
     print(res)
