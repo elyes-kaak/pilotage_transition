@@ -20,7 +20,7 @@ class Logger(object):
     def flush(self):
         pass
 
-#sys.stdout = Logger()
+sys.stdout = Logger()
 
 def main():
     trajectoire_ref = Calcul_trajectoire(x_ref)
@@ -44,7 +44,7 @@ def main():
 
         optim = Methodes(x0)
         start_time = time.time()
-        budget, surcout, x, res = optim.methode_surcout()
+        budget, surcout, x, res = optim.methode_budget()
         end_time = time.time()
 
         print(res)

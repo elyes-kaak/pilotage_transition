@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import scipy.integrate as integrate
 from Parametres_Allemagne import *
-from scipy.optimize import fsolve
-import math
-import warnings
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 
