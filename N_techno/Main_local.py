@@ -6,7 +6,7 @@ from Methodes import *
 import time
 import sys
 
-nom = 'results-Diff-France-multiple-x0'
+nom = 'results-Diff-Allemagne-Diff-evol'
 
 class Logger(object):
     def __init__(self):
