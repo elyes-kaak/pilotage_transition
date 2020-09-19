@@ -1,0 +1,1566 @@
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Hydro', 'Biomasse', 'Solaire']
+Initial Objective: 1164700.5552255416
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 816970.6497255757
+Emissions de la solution = 11420
+Surcout : 817365
+Contraintes respectées 
+Temps d'exécution : 92.55
+c_0= 71.39 c_1= 63.25 c_2= 56.99 c_3= 53.62 c_4= 44.58 
+t_0= 8.2 t_1= 12.74 t_2= 13.05 t_3= 25.26 t_4= 29.99 
+k_0= 102.11 k_1= 222.57 k_2= 252.59 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Solaire', 'Hydro', 'Eolien']
+Initial Objective: 1436852.5531836844
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1184313.5592130425
+Emissions de la solution = 10498
+Surcout : 1184313
+Contraintes respectées 
+Temps d'exécution : 92.92
+c_0= 71.61 c_1= 61.57 c_2= 57.3 c_3= 51.17 c_4= 41.46 
+t_0= 6.5 t_1= 11.6 t_2= 20.28 t_3= 20.29 t_4= 27.24 
+k_0= 99.91 k_1= 220.39 k_2= 249.57 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Eolien', 'Biomasse', 'Solaire']
+Initial Objective: 1176278.31900261
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 846696.4092963277
+Emissions de la solution = 10521
+Surcout : 847082
+Contraintes respectées 
+Temps d'exécution : 93.36
+c_0= 71.15 c_1= 62.2 c_2= 58.22 c_3= 53.75 c_4= 46.57 
+t_0= 7.13 t_1= 11.8 t_2= 21.63 t_3= 24.7 t_4= 29.99 
+k_0= 100.26 k_1= 222.0 k_2= 250.67 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Biomasse', 'Eolien', 'Biogaz']
+Initial Objective: 1630156.2073272585
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1361869.7466509598
+Emissions de la solution = 10466
+Surcout : 1361869
+Contraintes respectées 
+Temps d'exécution : 97.53
+c_0= 72.25 c_1= 61.6 c_2= 56.65 c_3= 52.06 c_4= 41.2 
+t_0= 11.18 t_1= 11.19 t_2= 16.38 t_3= 21.47 t_4= 25.94 
+k_0= 100.08 k_1= 220.47 k_2= 249.57 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Biogaz', 'Hydro', 'Eolien']
+Initial Objective: 1620603.6316784893
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1121397.7272845653
+Emissions de la solution = 11788
+Surcout : 1121397
+Contraintes respectées 
+Temps d'exécution : 98.02
+c_0= 75.3 c_1= 61.78 c_2= 55.33 c_3= 50.29 c_4= 42.19 
+t_0= 15.03 t_1= 15.04 t_2= 15.05 t_3= 22.29 t_4= 29.54 
+k_0= 101.29 k_1= 222.3 k_2= 251.72 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Hydro', 'Biomasse', 'Eolien']
+Initial Objective: 1555350.4945646792
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1299616.023620434
+Emissions de la solution = 10657
+Surcout : 1299616
+Contraintes respectées 
+Temps d'exécution : 98.76
+c_0= 71.59 c_1= 62.49 c_2= 56.66 c_3= 51.47 c_4= 41.35 
+t_0= 6.68 t_1= 15.19 t_2= 15.21 t_3= 22.11 t_4= 27.02 
+k_0= 99.93 k_1= 219.98 k_2= 249.99 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Biomasse', 'Solaire', 'Eolien']
+Initial Objective: 1297740.277076315
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 793328.8390747649
+Emissions de la solution = 11151
+Surcout : 793691
+Contraintes non respectées 
+Temps d'exécution : 99.65
+c_0= 71.04 c_1= 61.16 c_2= 57.04 c_3= 53.32 c_4= 41.05 
+t_0= 7.0 t_1= 9.08 t_2= 18.62 t_3= 29.99 t_4= 30.01 
+k_0= 100.68 k_1= 220.33 k_2= 250.44 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Eolien', 'Solaire', 'Hydro']
+Initial Objective: 1303447.871800141
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 865846.7669799239
+Emissions de la solution = 10116
+Surcout : 865846
+Contraintes respectées 
+Temps d'exécution : 101.23
+c_0= 73.51 c_1= 62.99 c_2= 56.92 c_3= 53.27 c_4= 40.63 
+t_0= 6.29 t_1= 12.7 t_2= 18.0 t_3= 29.99 t_4= 30.0 
+k_0= 101.35 k_1= 220.98 k_2= 251.56 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Solaire', 'Biogaz', 'Eolien']
+Initial Objective: 1427479.699116704
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1155159.6762858403
+Emissions de la solution = 11179
+Surcout : 1155159
+Contraintes respectées 
+Temps d'exécution : 101.46
+c_0= 71.84 c_1= 61.45 c_2= 56.66 c_3= 51.86 c_4= 40.5 
+t_0= 6.79 t_1= 9.39 t_2= 19.96 t_3= 19.97 t_4= 26.89 
+k_0= 99.87 k_1= 220.34 k_2= 250.14 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Eolien', 'Hydro', 'Solaire']
+Initial Objective: 1172649.7362274006
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 897410.9491268033
+Emissions de la solution = 10881
+Surcout : 897817
+Contraintes respectées 
+Temps d'exécution : 103.21
+c_0= 71.17 c_1= 61.77 c_2= 56.78 c_3= 51.39 c_4= 41.37 
+t_0= 6.6 t_1= 11.7 t_2= 16.84 t_3= 19.25 t_4= 29.99 
+k_0= 100.19 k_1= 219.96 k_2= 249.37 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Eolien', 'Hydro', 'Biogaz']
+Initial Objective: 1618731.4884810755
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1319524.157255173
+Emissions de la solution = 10331
+Surcout : 1319524
+Contraintes respectées 
+Temps d'exécution : 103.27
+c_0= 73.34 c_1= 61.52 c_2= 56.36 c_3= 51.26 c_4= 41.26 
+t_0= 12.48 t_1= 12.49 t_2= 17.06 t_3= 25.91 t_4= 26.13 
+k_0= 100.09 k_1= 220.39 k_2= 249.99 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Biomasse', 'Solaire', 'Hydro']
+Initial Objective: 1302867.9654297535
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 851602.026472933
+Emissions de la solution = 10585
+Surcout : 851966
+Contraintes non respectées 
+Temps d'exécution : 103.46
+c_0= 72.22 c_1= 62.28 c_2= 56.55 c_3= 52.9 c_4= 41.72 
+t_0= 7.63 t_1= 10.9 t_2= 16.25 t_3= 29.99 t_4= 30.01 
+k_0= 100.26 k_1= 221.88 k_2= 251.11 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Biomasse', 'Solaire', 'Biogaz']
+Initial Objective: 1312185.581385072
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1071327.6044204994
+Emissions de la solution = 10184
+Surcout : 1071327
+Contraintes respectées 
+Temps d'exécution : 104.64
+c_0= 71.05 c_1= 61.42 c_2= 56.42 c_3= 52.07 c_4= 40.48 
+t_0= 6.87 t_1= 10.8 t_2= 16.64 t_3= 25.17 t_4= 26.41 
+k_0= 100.53 k_1= 220.63 k_2= 250.59 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Biogaz', 'Biomasse', 'Eolien']
+Initial Objective: 1618356.1098735197
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1354773.6957253856
+Emissions de la solution = 10821
+Surcout : 1354773
+Contraintes respectées 
+Temps d'exécution : 104.95
+c_0= 72.63 c_1= 61.14 c_2= 56.22 c_3= 51.39 c_4= 41.25 
+t_0= 10.35 t_1= 10.36 t_2= 16.37 t_3= 21.71 t_4= 27.3 
+k_0= 100.08 k_1= 220.17 k_2= 250.08 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Biomasse', 'Biogaz', 'Eolien']
+Initial Objective: 1623678.5117665706
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1324796.163033066
+Emissions de la solution = 11040
+Surcout : 1324796
+Contraintes respectées 
+Temps d'exécution : 105.11
+c_0= 72.8 c_1= 61.17 c_2= 56.28 c_3= 51.14 c_4= 41.51 
+t_0= 11.02 t_1= 11.03 t_2= 17.35 t_3= 19.46 t_4= 27.65 
+k_0= 100.22 k_1= 219.82 k_2= 250.14 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Eolien', 'Biogaz', 'Solaire']
+Initial Objective: 1163276.8821604205
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 908211.4034522978
+Emissions de la solution = 10314
+Surcout : 908614
+Contraintes respectées 
+Temps d'exécution : 107.0
+c_0= 71.82 c_1= 61.29 c_2= 57.0 c_3= 51.98 c_4= 42.29 
+t_0= 7.5 t_1= 10.09 t_2= 15.11 t_3= 24.25 t_4= 29.99 
+k_0= 99.35 k_1= 222.24 k_2= 248.83 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Biomasse', 'Hydro', 'Solaire']
+Initial Objective: 1172069.8298570132
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 886631.3634283636
+Emissions de la solution = 10857
+Surcout : 887031
+Contraintes respectées 
+Temps d'exécution : 107.03
+c_0= 71.34 c_1= 62.88 c_2= 57.87 c_3= 51.37 c_4= 42.78 
+t_0= 6.48 t_1= 10.9 t_2= 16.67 t_3= 19.4 t_4= 29.99 
+k_0= 100.86 k_1= 220.6 k_2= 250.77 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Hydro', 'Solaire', 'Biomasse']
+Initial Objective: 1291828.6134187325
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 770116.053800534
+Emissions de la solution = 11674
+Surcout : 770481
+Contraintes non respectées 
+Temps d'exécution : 107.81
+c_0= 72.6 c_1= 61.94 c_2= 57.05 c_3= 52.53 c_4= 42.08 
+t_0= 9.1 t_1= 11.19 t_2= 14.66 t_3= 29.99 t_4= 30.01 
+k_0= 98.47 k_1= 220.58 k_2= 248.95 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Biomasse', 'Biogaz', 'Solaire']
+Initial Objective: 1179950.6530714598
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 887364.9193175499
+Emissions de la solution = 10280
+Surcout : 887751
+Contraintes respectées 
+Temps d'exécution : 107.92
+c_0= 70.64 c_1= 62.13 c_2= 58.49 c_3= 51.23 c_4= 46.2 
+t_0= 8.99 t_1= 11.7 t_2= 18.6 t_3= 24.83 t_4= 29.99 
+k_0= 99.91 k_1= 220.95 k_2= 251.03 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Eolien', 'Biomasse', 'Hydro']
+Initial Objective: 1566289.0698188413
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1271073.0479483225
+Emissions de la solution = 10263
+Surcout : 1271073
+Contraintes respectées 
+Temps d'exécution : 108.29
+c_0= 71.16 c_1= 62.59 c_2= 56.47 c_3= 51.48 c_4= 42.32 
+t_0= 8.1 t_1= 16.7 t_2= 16.72 t_3= 22.05 t_4= 28.35 
+k_0= 99.09 k_1= 221.69 k_2= 249.1 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Biomasse', 'Eolien', 'Hydro']
+Initial Objective: 1626605.4682482847
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1356342.4586628922
+Emissions de la solution = 10336
+Surcout : 1356342
+Contraintes respectées 
+Temps d'exécution : 108.42
+c_0= 72.74 c_1= 62.94 c_2= 57.22 c_3= 50.66 c_4= 41.1 
+t_0= 11.37 t_1= 11.39 t_2= 17.11 t_3= 20.69 t_4= 27.33 
+k_0= 100.33 k_1= 220.18 k_2= 250.4 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Hydro', 'Solaire', 'Eolien']
+Initial Objective: 1282973.21439728
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 762354.8577834272
+Emissions de la solution = 11741
+Surcout : 762354
+Contraintes respectées 
+Temps d'exécution : 108.59
+c_0= 71.88 c_1= 61.06 c_2= 57.02 c_3= 52.28 c_4= 40.72 
+t_0= 8.04 t_1= 11.9 t_2= 13.59 t_3= 29.98 t_4= 29.99 
+k_0= 101.03 k_1= 220.94 k_2= 250.54 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biogaz', 'Biomasse', 'Eolien']
+Initial Objective: 1566544.0833962127
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1286338.6174334665
+Emissions de la solution = 10766
+Surcout : 1286338
+Contraintes respectées 
+Temps d'exécution : 108.68
+c_0= 70.91 c_1= 62.74 c_2= 55.97 c_3= 50.35 c_4= 41.22 
+t_0= 7.18 t_1= 15.46 t_2= 15.47 t_3= 21.73 t_4= 27.62 
+k_0= 99.9 k_1= 219.3 k_2= 249.82 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Biogaz', 'Hydro', 'Biomasse']
+Initial Objective: 1613408.735938559
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1343639.5600402618
+Emissions de la solution = 10453
+Surcout : 1343639
+Contraintes respectées 
+Temps d'exécution : 109.39
+c_0= 73.11 c_1= 61.35 c_2= 56.16 c_3= 51.37 c_4= 41.83 
+t_0= 11.41 t_1= 11.76 t_2= 19.13 t_3= 22.96 t_4= 26.41 
+k_0= 101.88 k_1= 219.99 k_2= 249.33 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Solaire', 'Hydro', 'Biomasse']
+Initial Objective: 1431288.2398902746
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 994858.5449907789
+Emissions de la solution = 10203
+Surcout : 994858
+Contraintes respectées 
+Temps d'exécution : 110.48
+c_0= 70.78 c_1= 61.86 c_2= 58.72 c_3= 51.17 c_4= 41.13 
+t_0= 7.2 t_1= 11.9 t_2= 25.38 t_3= 25.39 t_4= 28.61 
+k_0= 99.71 k_1= 220.19 k_2= 250.39 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Biogaz', 'Biomasse', 'Solaire']
+Initial Objective: 1175894.144057075
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 824114.6991252862
+Emissions de la solution = 11274
+Surcout : 824510
+Contraintes respectées 
+Temps d'exécution : 111.16
+c_0= 71.98 c_1= 62.31 c_2= 56.78 c_3= 52.82 c_4= 44.24 
+t_0= 7.37 t_1= 15.11 t_2= 15.27 t_3= 26.21 t_4= 29.99 
+k_0= 100.52 k_1= 219.64 k_2= 251.2 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Hydro', 'Eolien', 'Solaire']
+Initial Objective: 1156527.944257424
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 701842.2427636551
+Emissions de la solution = 12329
+Surcout : 701842
+Contraintes respectées 
+Temps d'exécution : 111.48
+c_0= 74.97 c_1= 63.11 c_2= 57.48 c_3= 55.17 c_4= 49.56 
+t_0= 11.49 t_1= 11.54 t_2= 11.61 t_3= 29.98 t_4= 29.99 
+k_0= 98.46 k_1= 219.38 k_2= 249.42 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Eolien', 'Solaire', 'Biogaz']
+Initial Objective: 1312765.4877554595
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 850259.8222480048
+Emissions de la solution = 10267
+Surcout : 850259
+Contraintes respectées 
+Temps d'exécution : 111.82
+c_0= 71.46 c_1= 62.65 c_2= 57.92 c_3= 54.09 c_4= 40.82 
+t_0= 7.15 t_1= 13.98 t_2= 17.8 t_3= 29.99 t_4= 30.0 
+k_0= 99.52 k_1= 218.87 k_2= 249.44 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Hydro', 'Biogaz', 'Biomasse']
+Initial Objective: 1607617.845263937
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1262151.8197571556
+Emissions de la solution = 10595
+Surcout : 1262151
+Contraintes respectées 
+Temps d'exécution : 112.79
+c_0= 74.27 c_1= 60.55 c_2= 56.4 c_3= 51.5 c_4= 42.92 
+t_0= 13.15 t_1= 13.16 t_2= 20.09 t_3= 21.84 t_4= 27.6 
+k_0= 101.46 k_1= 219.91 k_2= 250.16 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Biogaz', 'Eolien', 'Solaire']
+Initial Objective: 1159016.1281821532
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 818896.3269173045
+Emissions de la solution = 11113
+Surcout : 818896
+Contraintes respectées 
+Temps d'exécution : 112.74
+c_0= 72.86 c_1= 61.67 c_2= 56.92 c_3= 52.83 c_4= 45.85 
+t_0= 8.67 t_1= 8.7 t_2= 17.72 t_3= 25.27 t_4= 30.0 
+k_0= 99.04 k_1= 219.19 k_2= 249.26 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Biomasse', 'Hydro', 'Eolien']
+Initial Objective: 1562719.769196151
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1194255.7410019794
+Emissions de la solution = 10973
+Surcout : 1194255
+Contraintes respectées 
+Temps d'exécution : 113.18
+c_0= 70.91 c_1= 62.83 c_2= 55.83 c_3= 51.66 c_4= 41.68 
+t_0= 6.9 t_1= 17.83 t_2= 17.84 t_3= 19.24 t_4= 27.68 
+k_0= 99.63 k_1= 220.29 k_2= 250.5 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Biogaz', 'Solaire', 'Biomasse']
+Initial Objective: 1301759.521380815
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 864971.8843694711
+Emissions de la solution = 10192
+Surcout : 864971
+Contraintes respectées 
+Temps d'exécution : 113.86
+c_0= 71.43 c_1= 56.38 c_2= 56.38 c_3= 53.46 c_4= 41.26 
+t_0= 6.15 t_1= 13.78 t_2= 13.78 t_3= 29.97 t_4= 30.0 
+k_0= 101.29 k_1= 221.79 k_2= 251.69 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Eolien', 'Biogaz', 'Solaire']
+Initial Objective: 1180530.5594418473
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 753728.7655208169
+Emissions de la solution = 11015
+Surcout : 754093
+Contraintes non respectées 
+Temps d'exécution : 114.3
+c_0= 75.86 c_1= 62.17 c_2= 62.67 c_3= 53.61 c_4= 52.47 
+t_0= 7.84 t_1= 20.71 t_2= 20.7 t_3= 27.2 t_4= 29.99 
+k_0= 99.91 k_1= 223.52 k_2= 251.11 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Hydro', 'Biogaz', 'Eolien']
+Initial Objective: 1614794.363508987
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1197855.1197256125
+Emissions de la solution = 11845
+Surcout : 1197855
+Contraintes respectées 
+Temps d'exécution : 114.34
+c_0= 73.32 c_1= 61.58 c_2= 56.16 c_3= 51.16 c_4= 42.39 
+t_0= 13.15 t_1= 13.16 t_2= 13.19 t_3= 22.39 t_4= 28.88 
+k_0= 99.52 k_1= 220.83 k_2= 250.22 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biogaz', 'Eolien', 'Biomasse']
+Initial Objective: 1565964.1905800963
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1307893.5884240891
+Emissions de la solution = 10603
+Surcout : 1307893
+Contraintes respectées 
+Temps d'exécution : 115.54
+c_0= 71.46 c_1= 62.18 c_2= 55.83 c_3= 50.18 c_4= 41.17 
+t_0= 6.75 t_1= 15.32 t_2= 15.33 t_3= 21.88 t_4= 26.75 
+k_0= 100.14 k_1= 220.26 k_2= 249.79 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biomasse', 'Biogaz', 'Eolien']
+Initial Objective: 1570600.5924105975
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 1124956.60340077
+Emissions de la solution = 11603
+Surcout : 1124956
+Contraintes non respectées 
+Temps d'exécution : 117.24
+c_0= 72.52 c_1= 60.08 c_2= 57.9 c_3= 50.95 c_4= 40.95 
+t_0= 4.66 t_1= 18.91 t_2= 18.9 t_3= 20.0 t_4= 28.42 
+k_0= 100.88 k_1= 222.2 k_2= 251.15 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Eolien', 'Solaire', 'Biogaz']
+Initial Objective: 1296199.8478609647
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 884666.8782899535
+Emissions de la solution = 10527
+Surcout : 884666
+Contraintes respectées 
+Temps d'exécution : 117.19
+c_0= 72.16 c_1= 61.25 c_2= 56.89 c_3= 53.28 c_4= 41.79 
+t_0= 7.7 t_1= 9.03 t_2= 18.09 t_3= 28.71 t_4= 28.72 
+k_0= 99.67 k_1= 219.79 k_2= 250.09 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Eolien', 'Biogaz', 'Biomasse']
+Initial Objective: 1569237.1347842873
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1178524.33309258
+Emissions de la solution = 10802
+Surcout : 1178524
+Contraintes respectées 
+Temps d'exécution : 118.94
+c_0= 71.34 c_1= 62.89 c_2= 57.98 c_3= 51.56 c_4= 41.22 
+t_0= 5.29 t_1= 18.16 t_2= 18.17 t_3= 22.32 t_4= 28.65 
+k_0= 97.77 k_1= 218.47 k_2= 248.45 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Solaire', 'Biogaz', 'Eolien']
+Initial Objective: 1444733.3763981303
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1197137.522245759
+Emissions de la solution = 10341
+Surcout : 1197137
+Contraintes respectées 
+Temps d'exécution : 119.04
+c_0= 71.52 c_1= 61.74 c_2= 57.2 c_3= 51.67 c_4= 40.32 
+t_0= 6.09 t_1= 11.77 t_2= 20.28 t_3= 20.29 t_4= 27.21 
+k_0= 99.87 k_1= 220.14 k_2= 250.63 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Hydro', 'Solaire', 'Eolien']
+Initial Objective: 1293771.9774154301
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 878866.1471335246
+Emissions de la solution = 11381
+Surcout : 878866
+Contraintes respectées 
+Temps d'exécution : 119.35
+c_0= 71.03 c_1= 62.05 c_2= 56.8 c_3= 52.12 c_4= 42.13 
+t_0= 7.3 t_1= 12.48 t_2= 13.89 t_3= 27.91 t_4= 27.92 
+k_0= 98.58 k_1= 219.32 k_2= 249.62 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Biogaz', 'Eolien', 'Solaire']
+Initial Objective: 1177257.6152376563
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 795131.0425975231
+Emissions de la solution = 11439
+Surcout : 795131
+Contraintes non respectées 
+Temps d'exécution : 119.95
+c_0= 71.08 c_1= 62.09 c_2= 58.22 c_3= 53.22 c_4= 47.78 
+t_0= 5.34 t_1= 14.71 t_2= 14.7 t_3= 27.4 t_4= 30.01 
+k_0= 100.24 k_1= 220.64 k_2= 249.79 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Biomasse', 'Eolien', 'Solaire']
+Initial Objective: 1171295.0069364586
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 721731.9555667604
+Emissions de la solution = 11928
+Surcout : 730640
+Contraintes respectées 
+Temps d'exécution : 120.27
+c_0= 70.99 c_1= 62.43 c_2= 61.07 c_3= 47.89 c_4= 47.89 
+t_0= 10.3 t_1= 10.46 t_2= 25.56 t_3= 29.99 t_4= 29.99 
+k_0= 99.0 k_1= 216.32 k_2= 246.65 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Eolien', 'Biomasse', 'Biogaz']
+Initial Objective: 1629372.642517065
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1376374.7317294695
+Emissions de la solution = 10478
+Surcout : 1376374
+Contraintes respectées 
+Temps d'exécution : 120.34
+c_0= 72.39 c_1= 61.6 c_2= 56.44 c_3= 51.34 c_4= 40.45 
+t_0= 10.73 t_1= 10.74 t_2= 16.71 t_3= 21.63 t_4= 25.52 
+k_0= 100.25 k_1= 221.39 k_2= 250.49 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Solaire', 'Biogaz', 'Biomasse']
+Initial Objective: 1442790.0124014332
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1161802.0266410594
+Emissions de la solution = 10312
+Surcout : 1161802
+Contraintes respectées 
+Temps d'exécution : 120.85
+c_0= 71.78 c_1= 60.25 c_2= 56.55 c_3= 51.77 c_4= 41.61 
+t_0= 7.22 t_1= 12.43 t_2= 21.29 t_3= 21.3 t_4= 27.39 
+k_0= 100.8 k_1= 219.66 k_2= 249.45 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Hydro', 'Biomasse', 'Biogaz']
+Initial Objective: 1617645.6033859989
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1392674.7622220274
+Emissions de la solution = 10310
+Surcout : 1392674
+Contraintes respectées 
+Temps d'exécution : 121.16
+c_0= 72.9 c_1= 62.18 c_2= 56.34 c_3= 51.83 c_4= 41.56 
+t_0= 10.26 t_1= 10.28 t_2= 18.88 t_3= 21.89 t_4= 25.91 
+k_0= 102.01 k_1= 219.57 k_2= 249.89 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Biomasse', 'Eolien', 'Solaire']
+Initial Objective: 1177061.8838128035
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 703962.565300005
+Emissions de la solution = 11612
+Surcout : 703962
+Contraintes respectées 
+Temps d'exécution : 121.49
+c_0= 71.49 c_1= 65.55 c_2= 62.84 c_3= 53.09 c_4= 53.09 
+t_0= 10.13 t_1= 15.01 t_2= 29.43 t_3= 29.99 t_4= 29.99 
+k_0= 95.86 k_1= 217.41 k_2= 247.32 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Eolien', 'Solaire', 'Biomasse']
+Initial Objective: 1302143.6963263494
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 853458.6737747401
+Emissions de la solution = 10091
+Surcout : 853458
+Contraintes respectées 
+Temps d'exécution : 121.85
+c_0= 70.64 c_1= 61.81 c_2= 56.97 c_3= 53.64 c_4= 43.05 
+t_0= 6.62 t_1= 10.68 t_2= 16.56 t_3= 29.99 t_4= 30.0 
+k_0= 99.37 k_1= 219.8 k_2= 251.47 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Eolien', 'Hydro', 'Biomasse']
+Initial Objective: 1557735.3622731287
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1231631.857515868
+Emissions de la solution = 10446
+Surcout : 1231631
+Contraintes respectées 
+Temps d'exécution : 122.37
+c_0= 70.99 c_1= 62.67 c_2= 57.59 c_3= 51.65 c_4= 41.8 
+t_0= 6.08 t_1= 17.39 t_2= 17.41 t_3= 22.63 t_4= 27.57 
+k_0= 101.16 k_1= 219.25 k_2= 249.44 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Eolien', 'Solaire', 'Biomasse', 'Biogaz']
+Initial Objective: 1449159.5633913055
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1108497.5459576258
+Emissions de la solution = 10153
+Surcout : 1108497
+Contraintes respectées 
+Temps d'exécution : 122.8
+c_0= 70.88 c_1= 61.92 c_2= 57.63 c_3= 51.59 c_4= 41.57 
+t_0= 6.37 t_1= 12.2 t_2= 22.77 t_3= 22.78 t_4= 26.48 
+k_0= 99.65 k_1= 220.06 k_2= 250.88 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Solaire', 'Biomasse', 'Eolien']
+Initial Objective: 1440481.135958893
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 730774.6105461092
+Emissions de la solution = 11496
+Surcout : 730774
+Contraintes respectées 
+Temps d'exécution : 122.86
+c_0= 70.33 c_1= 62.01 c_2= 59.48 c_3= 55.95 c_4= 42.66 
+t_0= 8.39 t_1= 11.57 t_2= 29.5 t_3= 29.51 t_4= 29.52 
+k_0= 100.28 k_1= 222.01 k_2= 249.54 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Eolien', 'Biomasse', 'Biogaz']
+Initial Objective: 1575606.6857741599
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1241723.7774001597
+Emissions de la solution = 10471
+Surcout : 1241723
+Contraintes respectées 
+Temps d'exécution : 123.91
+c_0= 71.49 c_1= 63.01 c_2= 56.64 c_3= 51.92 c_4= 41.42 
+t_0= 6.16 t_1= 17.23 t_2= 17.25 t_3= 22.07 t_4= 26.71 
+k_0= 100.41 k_1= 220.17 k_2= 249.95 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Biogaz', 'Eolien', 'Biomasse']
+Initial Objective: 1618054.3001619931
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1282905.882172834
+Emissions de la solution = 10787
+Surcout : 1282905
+Contraintes respectées 
+Temps d'exécution : 124.51
+c_0= 74.82 c_1= 62.36 c_2= 56.66 c_3= 51.46 c_4= 42.08 
+t_0= 11.94 t_1= 11.96 t_2= 16.15 t_3= 22.54 t_4= 26.38 
+k_0= 99.01 k_1= 220.36 k_2= 249.62 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Biomasse', 'Biogaz', 'Hydro']
+Initial Objective: 1622682.3015921907
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1335122.8102549033
+Emissions de la solution = 10355
+Surcout : 1335122
+Contraintes respectées 
+Temps d'exécution : 125.04
+c_0= 73.31 c_1= 61.06 c_2= 56.98 c_3= 52.18 c_4= 39.98 
+t_0= 11.59 t_1= 11.6 t_2= 19.26 t_3= 26.64 t_4= 28.22 
+k_0= 100.13 k_1= 220.48 k_2= 250.83 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Hydro', 'Eolien', 'Biomasse']
+Initial Objective: 1615566.1162372637
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1324950.916075822
+Emissions de la solution = 10935
+Surcout : 1324950
+Contraintes respectées 
+Temps d'exécution : 127.31
+c_0= 71.25 c_1= 61.22 c_2= 56.8 c_3= 51.44 c_4= 41.38 
+t_0= 11.36 t_1= 11.37 t_2= 13.66 t_3= 22.8 t_4= 27.14 
+k_0= 100.15 k_1= 220.19 k_2= 249.93 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Eolien', 'Biogaz', 'Hydro']
+Initial Objective: 1623262.2079625784
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1337088.1507375939
+Emissions de la solution = 10321
+Surcout : 1337088
+Contraintes respectées 
+Temps d'exécution : 127.56
+c_0= 71.76 c_1= 61.97 c_2= 56.82 c_3= 52.02 c_4= 41.21 
+t_0= 12.33 t_1= 12.35 t_2= 15.89 t_3= 24.72 t_4= 27.37 
+k_0= 100.45 k_1= 220.42 k_2= 250.86 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Solaire', 'Biomasse', 'Eolien', 'Biogaz']
+Initial Objective: 1576390.2505843535
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 965417.6573373238
+Emissions de la solution = 11164
+Surcout : 965417
+Contraintes non respectées 
+Temps d'exécution : 129.24
+c_0= 73.34 c_1= 50.34 c_2= 56.14 c_3= 50.34 c_4= 41.78 
+t_0= 6.95 t_1= 23.13 t_2= 23.14 t_3= 23.13 t_4= 29.63 
+k_0= 100.64 k_1= 220.75 k_2= 251.41 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Eolien', 'Hydro', 'Biomasse']
+Initial Objective: 1617268.1958923787
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1337026.5781908298
+Emissions de la solution = 10497
+Surcout : 1337026
+Contraintes respectées 
+Temps d'exécution : 129.29
+c_0= 72.42 c_1= 61.72 c_2= 56.35 c_3= 51.44 c_4= 40.6 
+t_0= 11.71 t_1= 11.72 t_2= 16.47 t_3= 22.48 t_4= 27.35 
+k_0= 100.33 k_1= 220.62 k_2= 250.37 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Eolien', 'Solaire', 'Biomasse']
+Initial Objective: 1296376.8194500047
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 843792.8352319088
+Emissions de la solution = 10436
+Surcout : 843792
+Contraintes respectées 
+Temps d'exécution : 130.47
+c_0= 69.97 c_1= 62.24 c_2= 57.7 c_3= 53.3 c_4= 41.83 
+t_0= 7.6 t_1= 9.36 t_2= 17.3 t_3= 29.68 t_4= 29.7 
+k_0= 99.28 k_1= 220.37 k_2= 249.42 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Eolien', 'Biomasse', 'Hydro']
+Initial Objective: 1625821.903438091
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1246969.8483566353
+Emissions de la solution = 10636
+Surcout : 1246969
+Contraintes respectées 
+Temps d'exécution : 130.71
+c_0= 72.67 c_1= 62.16 c_2= 56.89 c_3= 52.31 c_4= 43.71 
+t_0= 13.48 t_1= 13.49 t_2= 19.45 t_3= 23.69 t_4= 29.64 
+k_0= 98.0 k_1= 223.23 k_2= 247.51 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Hydro', 'Eolien', 'Biogaz', 'Biomasse']
+Initial Objective: 1622315.0541402607
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1350854.7834082886
+Emissions de la solution = 10588
+Surcout : 1350854
+Contraintes respectées 
+Temps d'exécution : 130.74
+c_0= 74.14 c_1= 61.74 c_2= 56.77 c_3= 50.71 c_4= 40.94 
+t_0= 10.68 t_1= 10.69 t_2= 15.49 t_3= 21.08 t_4= 27.37 
+k_0= 99.06 k_1= 220.04 k_2= 249.41 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Solaire', 'Biomasse', 'Eolien']
+Initial Objective: 1434714.2590825483
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 883374.1523440771
+Emissions de la solution = 11850
+Surcout : 883374
+Contraintes respectées 
+Temps d'exécution : 132.16
+c_0= 71.51 c_1= 60.72 c_2= 57.5 c_3= 51.49 c_4= 42.73 
+t_0= 9.39 t_1= 9.47 t_2= 25.44 t_3= 25.45 t_4= 29.51 
+k_0= 97.48 k_1= 221.94 k_2= 246.84 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Hydro', 'Eolien', 'Biogaz']
+Initial Objective: 1622833.849682773
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1302087.6262545532
+Emissions de la solution = 10843
+Surcout : 1302087
+Contraintes respectées 
+Temps d'exécution : 132.46
+c_0= 73.28 c_1= 61.52 c_2= 56.66 c_3= 51.73 c_4= 41.15 
+t_0= 12.06 t_1= 12.1 t_2= 14.15 t_3= 21.79 t_4= 27.41 
+k_0= 99.52 k_1= 219.17 k_2= 250.02 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Biogaz', 'Solaire', 'Eolien']
+Initial Objective: 1303702.8853775123
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 845562.6838450675
+Emissions de la solution = 11279
+Surcout : 845562
+Contraintes respectées 
+Temps d'exécution : 132.62
+c_0= 72.28 c_1= 60.84 c_2= 56.19 c_3= 51.32 c_4= 42.69 
+t_0= 7.1 t_1= 13.3 t_2= 14.49 t_3= 29.02 t_4= 29.03 
+k_0= 99.25 k_1= 218.31 k_2= 250.24 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Hydro', 'Eolien', 'Solaire']
+Initial Objective: 1167326.7072755739
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 753110.4336918493
+Emissions de la solution = 12003
+Surcout : 753110
+Contraintes respectées 
+Temps d'exécution : 134.2
+c_0= 72.51 c_1= 63.24 c_2= 57.81 c_3= 53.66 c_4= 48.03 
+t_0= 9.55 t_1= 12.52 t_2= 12.58 t_3= 29.95 t_4= 29.96 
+k_0= 100.0 k_1= 220.45 k_2= 250.52 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biomasse', 'Solaire', 'Eolien', 'Biogaz']
+Initial Objective: 1450523.0345718865
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 974652.0554280803
+Emissions de la solution = 10486
+Surcout : 974652
+Contraintes respectées 
+Temps d'exécution : 136.97
+c_0= 70.78 c_1= 61.94 c_2= 59.29 c_3= 51.41 c_4= 40.33 
+t_0= 6.1 t_1= 12.07 t_2= 25.43 t_3= 25.44 t_4= 29.14 
+k_0= 100.91 k_1= 220.72 k_2= 249.58 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Solaire', 'Eolien', 'Biomasse']
+Initial Objective: 1439901.2431427767
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1012670.9267896262
+Emissions de la solution = 10713
+Surcout : 1012670
+Contraintes respectées 
+Temps d'exécution : 137.56
+c_0= 71.33 c_1= 61.2 c_2= 57.15 c_3= 51.34 c_4= 40.9 
+t_0= 5.18 t_1= 11.29 t_2= 24.26 t_3= 24.27 t_4= 27.74 
+k_0= 99.15 k_1= 218.45 k_2= 250.22 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Solaire', 'Hydro', 'Eolien']
+Initial Objective: 1426053.790165534
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1128996.9110824757
+Emissions de la solution = 10962
+Surcout : 1128996
+Contraintes respectées 
+Temps d'exécution : 137.82
+c_0= 71.91 c_1= 61.02 c_2= 58.24 c_3= 51.32 c_4= 41.54 
+t_0= 6.5 t_1= 11.78 t_2= 20.52 t_3= 20.53 t_4= 27.8 
+k_0= 100.67 k_1= 220.84 k_2= 250.83 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Biomasse', 'Hydro', 'Eolien']
+Initial Objective: 1622252.6028154006
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1281660.674890739
+Emissions de la solution = 11217
+Surcout : 1281660
+Contraintes respectées 
+Temps d'exécution : 138.07
+c_0= 73.97 c_1= 61.23 c_2= 57.02 c_3= 51.46 c_4= 41.85 
+t_0= 11.5 t_1= 11.51 t_2= 17.48 t_3= 18.8 t_4= 28.63 
+k_0= 99.68 k_1= 219.74 k_2= 249.61 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Biomasse', 'Solaire', 'Eolien', 'Hydro']
+Initial Objective: 1441205.4186165682
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1053035.5079256236
+Emissions de la solution = 10269
+Surcout : 1053035
+Contraintes respectées 
+Temps d'exécution : 138.12
+c_0= 70.85 c_1= 61.63 c_2= 57.72 c_3= 52.38 c_4= 40.79 
+t_0= 5.74 t_1= 11.49 t_2= 23.94 t_3= 23.95 t_4= 28.67 
+k_0= 100.35 k_1= 221.13 k_2= 250.18 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biogaz', 'Hydro', 'Biomasse', 'Eolien']
+Initial Objective: 1614883.328183929
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1180671.0135132466
+Emissions de la solution = 11469
+Surcout : 1180671
+Contraintes respectées 
+Temps d'exécution : 139.51
+c_0= 74.15 c_1= 62.5 c_2= 57.16 c_3= 53.3 c_4= 43.53 
+t_0= 13.49 t_1= 13.5 t_2= 14.62 t_3= 23.32 t_4= 28.91 
+k_0= 99.5 k_1= 220.91 k_2= 249.51 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Solaire', 'Eolien', 'Biomasse']
+Initial Objective: 1434134.366266432
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 957393.8983753838
+Emissions de la solution = 11299
+Surcout : 957393
+Contraintes respectées 
+Temps d'exécution : 140.3
+c_0= 71.71 c_1= 60.67 c_2= 57.26 c_3= 52.86 c_4= 41.55 
+t_0= 7.9 t_1= 9.66 t_2= 24.61 t_3= 24.63 t_4= 27.65 
+k_0= 98.96 k_1= 219.91 k_2= 249.33 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Hydro', 'Eolien', 'Biomasse']
+Initial Objective: 1556033.282618014
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1260997.609227308
+Emissions de la solution = 10410
+Surcout : 1260997
+Contraintes respectées 
+Temps d'exécution : 140.96
+c_0= 71.79 c_1= 64.16 c_2= 56.06 c_3= 51.56 c_4= 41.49 
+t_0= 6.8 t_1= 16.48 t_2= 16.49 t_3= 20.72 t_4= 26.38 
+k_0= 100.27 k_1= 219.33 k_2= 249.52 
+
+L'ordre des technos décarbonées est le suivant : ['Hydro', 'Biogaz', 'Biomasse', 'Solaire', 'Eolien']
+Initial Objective: 1303507.1539526596
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 904067.0536636723
+Emissions de la solution = 10455
+Surcout : 904067
+Contraintes respectées 
+Temps d'exécution : 141.68
+c_0= 71.09 c_1= 61.4 c_2= 56.36 c_3= 51.32 c_4= 41.37 
+t_0= 6.58 t_1= 11.83 t_2= 17.52 t_3= 28.69 t_4= 28.7 
+k_0= 99.47 k_1= 220.13 k_2= 249.73 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Biomasse', 'Hydro', 'Biogaz']
+Initial Objective: 1618151.582110688
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1315464.84205366
+Emissions de la solution = 10372
+Surcout : 1315464
+Contraintes respectées 
+Temps d'exécution : 142.46
+c_0= 73.67 c_1= 60.99 c_2= 56.73 c_3= 52.55 c_4= 41.95 
+t_0= 12.06 t_1= 12.08 t_2= 19.69 t_3= 25.55 t_4= 27.89 
+k_0= 99.43 k_1= 220.97 k_2= 249.66 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Solaire', 'Eolien', 'Biogaz']
+Initial Objective: 1433957.394677392
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 789238.9925220367
+Emissions de la solution = 11681
+Surcout : 789238
+Contraintes respectées 
+Temps d'exécution : 150.62
+c_0= 74.59 c_1= 63.14 c_2= 68.17 c_3= 53.09 c_4= 40.77 
+t_0= 9.3 t_1= 9.77 t_2= 26.38 t_3= 26.4 t_4= 29.4 
+k_0= 101.35 k_1= 222.76 k_2= 252.01 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Eolien', 'Solaire', 'Biomasse', 'Hydro']
+Initial Objective: 1439841.947435987
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1041383.9392526441
+Emissions de la solution = 10136
+Surcout : 1041383
+Contraintes respectées 
+Temps d'exécution : 152.41
+c_0= 70.28 c_1= 61.98 c_2= 58.49 c_3= 52.71 c_4= 41.89 
+t_0= 6.59 t_1= 13.6 t_2= 24.11 t_3= 24.13 t_4= 27.44 
+k_0= 98.78 k_1= 221.99 k_2= 249.33 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Eolien', 'Solaire', 'Hydro']
+Initial Objective: 1292649.108781991
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 929572.7452812147
+Emissions de la solution = 10140
+Surcout : 929572
+Contraintes respectées 
+Temps d'exécution : 63.84
+c_0= 72.61 c_1= 61.19 c_2= 57.31 c_3= 52.1 c_4= 40.24 
+t_0= 7.78 t_1= 11.4 t_2= 15.65 t_3= 28.4 t_4= 28.43 
+k_0= 100.43 k_1= 220.9 k_2= 250.82 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Eolien', 'Biogaz', 'Biomasse', 'Hydro']
+Initial Objective: 1625006.7573165619
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1440559.7375413915
+Emissions de la solution = 10217
+Surcout : 1440559
+Contraintes respectées 
+Temps d'exécution : 158.09
+c_0= 72.48 c_1= 61.35 c_2= 55.99 c_3= 51.53 c_4= 41.34 
+t_0= 8.73 t_1= 11.31 t_2= 19.12 t_3= 22.66 t_4= 29.71 
+k_0= 101.23 k_1= 219.89 k_2= 249.75 
+
+L'ordre des technos décarbonées est le suivant : ['Solaire', 'Biomasse', 'Biogaz', 'Eolien', 'Hydro']
+Initial Objective: 1626370.2284971431
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1272584.5241341947
+Emissions de la solution = 10690
+Surcout : 1272584
+Contraintes respectées 
+Temps d'exécution : 160.65
+c_0= 72.61 c_1= 62.28 c_2= 56.09 c_3= 52.13 c_4= 42.15 
+t_0= 13.06 t_1= 13.07 t_2= 15.39 t_3= 22.51 t_4= 29.83 
+k_0= 99.64 k_1= 219.29 k_2= 249.09 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Biogaz', 'Hydro', 'Solaire']
+Initial Objective: 1159622.0957019515
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 868795.9015957589
+Emissions de la solution = 11159
+Surcout : 869198
+Contraintes respectées 
+Temps d'exécution : 57.18
+c_0= 71.63 c_1= 61.52 c_2= 56.76 c_3= 51.89 c_4= 42.41 
+t_0= 6.78 t_1= 11.3 t_2= 13.09 t_3= 21.5 t_4= 29.99 
+k_0= 99.12 k_1= 219.81 k_2= 250.39 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Hydro', 'Biogaz', 'Solaire', 'Eolien']
+Initial Objective: 1285461.3983220095
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 831410.8955376754
+Emissions de la solution = 11410
+Surcout : 831410
+Contraintes respectées 
+Temps d'exécution : 163.15
+c_0= 71.71 c_1= 61.66 c_2= 56.11 c_3= 51.82 c_4= 41.3 
+t_0= 7.6 t_1= 9.1 t_2= 16.8 t_3= 28.86 t_4= 28.87 
+k_0= 99.7 k_1= 219.03 k_2= 249.1 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Solaire', 'Biomasse', 'Eolien', 'Hydro']
+Initial Objective: 1567072.634629035
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1060536.158391467
+Emissions de la solution = 10617
+Surcout : 1060536
+Contraintes respectées 
+Temps d'exécution : 163.68
+c_0= 71.33 c_1= 66.77 c_2= 55.92 c_3= 51.98 c_4= 40.6 
+t_0= 7.58 t_1= 21.15 t_2= 21.18 t_3= 21.84 t_4= 28.52 
+k_0= 100.21 k_1= 220.23 k_2= 250.88 
+
+L'ordre des technos décarbonées est le suivant : ['Biogaz', 'Hydro', 'Eolien', 'Biomasse', 'Solaire']
+Initial Objective: 1170511.4421262648
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 717291.8429692464
+Emissions de la solution = 11823
+Surcout : 717291
+Contraintes respectées 
+Temps d'exécution : 168.91
+c_0= 71.92 c_1= 64.11 c_2= 60.67 c_3= 55.24 c_4= 49.81 
+t_0= 8.7 t_1= 8.88 t_2= 27.09 t_3= 28.63 t_4= 30.0 
+k_0= 102.02 k_1= 221.27 k_2= 251.24 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Biogaz', 'Solaire', 'Biomasse']
+Initial Objective: 1283956.4385641497
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 817271.6167813401
+Emissions de la solution = 11661
+Surcout : 817271
+Contraintes respectées 
+Temps d'exécution : 63.85
+c_0= 69.88 c_1= 60.28 c_2= 57.2 c_3= 41.56 c_4= 41.56 
+t_0= 8.69 t_1= 9.07 t_2= 16.68 t_3= 29.99 t_4= 29.99 
+k_0= 100.09 k_1= 220.01 k_2= 250.08 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Hydro', 'Eolien', 'Biogaz']
+Initial Objective: 1552502.2530453731
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1275057.9735314264
+Emissions de la solution = 10566
+Surcout : 1275057
+Contraintes respectées 
+Temps d'exécution : 73.27
+c_0= 70.68 c_1= 62.99 c_2= 56.63 c_3= 51.62 c_4= 41.49 
+t_0= 6.9 t_1= 15.9 t_2= 15.91 t_3= 22.85 t_4= 26.84 
+k_0= 100.04 k_1= 219.65 k_2= 250.4 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Biogaz', 'Biomasse', 'Solaire']
+Initial Objective: 1157812.9781358195
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 846746.9569511508
+Emissions de la solution = 11036
+Surcout : 847147
+Contraintes respectées 
+Temps d'exécution : 64.77
+c_0= 72.12 c_1= 61.39 c_2= 56.57 c_3= 52.2 c_4= 43.01 
+t_0= 8.18 t_1= 10.26 t_2= 17.04 t_3= 24.11 t_4= 29.99 
+k_0= 100.66 k_1= 220.79 k_2= 250.81 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Biomasse', 'Solaire', 'Hydro']
+Initial Objective: 1292507.606650441
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 824853.4703775628
+Emissions de la solution = 10611
+Surcout : 882258
+Contraintes respectées 
+Temps d'exécution : 60.18
+c_0= 74.4 c_1= 61.06 c_2= 57.41 c_3= 41.57 c_4= 41.57 
+t_0= 8.36 t_1= 11.55 t_2= 17.07 t_3= 29.99 t_4= 29.99 
+k_0= 100.28 k_1= 220.74 k_2= 250.41 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Solaire', 'Biomasse', 'Biogaz']
+Initial Objective: 1433032.3277356483
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 684620.584116512
+Emissions de la solution = 11848
+Surcout : 684620
+Contraintes non respectées 
+Temps d'exécution : 64.3
+c_0= 73.02 c_1= 61.78 c_2= 62.61 c_3= 52.93 c_4= 41.78 
+t_0= 8.72 t_1= 13.35 t_2= 29.99 t_3= 30.01 t_4= 30.0 
+k_0= 101.36 k_1= 220.67 k_2= 249.91 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Biomasse', 'Biogaz', 'Solaire']
+Initial Objective: 1163135.3800288707
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 878133.8851021006
+Emissions de la solution = 10910
+Surcout : 878541
+Contraintes respectées 
+Temps d'exécution : 65.22
+c_0= 73.34 c_1= 62.24 c_2= 55.66 c_3= 50.94 c_4= 41.03 
+t_0= 7.2 t_1= 7.98 t_2= 17.75 t_3= 23.32 t_4= 29.99 
+k_0= 99.41 k_1= 221.21 k_2= 249.35 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Biogaz', 'Solaire', 'Hydro']
+Initial Objective: 1291833.962660462
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 847042.2984727592
+Emissions de la solution = 10277
+Surcout : 847042
+Contraintes respectées 
+Temps d'exécution : 69.53
+c_0= 73.94 c_1= 62.86 c_2= 55.43 c_3= 55.58 c_4= 40.05 
+t_0= 8.1 t_1= 8.6 t_2= 23.34 t_3= 29.8 t_4= 29.96 
+k_0= 100.28 k_1= 221.53 k_2= 252.04 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Solaire', 'Biogaz', 'Biomasse']
+Initial Objective: 1425974.739358844
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 1118130.2911955048
+Emissions de la solution = 10804
+Surcout : 1118130
+Contraintes non respectées 
+Temps d'exécution : 67.48
+c_0= 70.26 c_1= 61.13 c_2= 56.31 c_3= 50.02 c_4= 40.22 
+t_0= 6.8 t_1= 10.9 t_2= 21.16 t_3= 25.61 t_4= 25.6 
+k_0= 99.78 k_1= 219.97 k_2= 250.05 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Solaire', 'Hydro', 'Biogaz']
+Initial Objective: 1421952.7694608215
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 912859.1444512832
+Emissions de la solution = 10142
+Surcout : 912859
+Contraintes respectées 
+Temps d'exécution : 72.07
+c_0= 71.8 c_1= 62.67 c_2= 58.82 c_3= 51.52 c_4= 40.87 
+t_0= 7.48 t_1= 11.26 t_2= 27.81 t_3= 27.82 t_4= 28.43 
+k_0= 101.55 k_1= 220.18 k_2= 250.87 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Solaire', 'Biogaz', 'Hydro']
+Initial Objective: 1426921.8931811617
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 976916.7072708528
+Emissions de la solution = 10643
+Surcout : 976916
+Contraintes respectées 
+Temps d'exécution : 58.24
+c_0= 71.86 c_1= 61.88 c_2= 51.92 c_3= 51.92 c_4= 42.75 
+t_0= 7.3 t_1= 9.9 t_2= 26.4 t_3= 26.4 t_4= 29.34 
+k_0= 98.52 k_1= 219.46 k_2= 249.17 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Hydro', 'Biogaz', 'Solaire']
+Initial Objective: 1153812.8275324495
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 819403.2289679225
+Emissions de la solution = 11668
+Surcout : 819798
+Contraintes respectées 
+Temps d'exécution : 75.2
+c_0= 72.39 c_1= 63.4 c_2= 56.03 c_3= 51.21 c_4= 44.04 
+t_0= 8.8 t_1= 11.9 t_2= 11.94 t_3= 22.58 t_4= 29.99 
+k_0= 100.89 k_1= 222.25 k_2= 251.73 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Solaire', 'Biomasse', 'Hydro']
+Initial Objective: 1429481.5886566744
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 768196.3954799593
+Emissions de la solution = 10726
+Surcout : 768196
+Contraintes non respectées 
+Temps d'exécution : 68.56
+c_0= 67.39 c_1= 62.52 c_2= 62.62 c_3= 52.87 c_4= 42.31 
+t_0= 5.66 t_1= 18.07 t_2= 29.98 t_3= 30.01 t_4= 30.0 
+k_0= 100.5 k_1= 219.92 k_2= 249.97 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Hydro', 'Solaire', 'Biogaz']
+Initial Objective: 1288735.9880849293
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 737068.2353720379
+Emissions de la solution = 11644
+Surcout : 737068
+Contraintes respectées 
+Temps d'exécution : 63.91
+c_0= 77.21 c_1= 64.8 c_2= 56.94 c_3= 58.85 c_4= 38.15 
+t_0= 7.6 t_1= 15.2 t_2= 15.26 t_3= 29.75 t_4= 29.99 
+k_0= 98.9 k_1= 220.72 k_2= 250.4 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Eolien', 'Hydro', 'Solaire']
+Initial Objective: 1161850.9732092507
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 780003.8384586393
+Emissions de la solution = 11049
+Surcout : 780003
+Contraintes respectées 
+Temps d'exécution : 86.51
+c_0= 76.05 c_1= 58.55 c_2= 64.2 c_3= 53.03 c_4= 47.75 
+t_0= 12.4 t_1= 12.41 t_2= 23.55 t_3= 29.72 t_4= 30.0 
+k_0= 98.02 k_1= 219.12 k_2= 251.18 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Biogaz', 'Hydro', 'Eolien']
+Initial Objective: 1550272.0350410894
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1279346.2743342435
+Emissions de la solution = 10734
+Surcout : 1279346
+Contraintes respectées 
+Temps d'exécution : 84.76
+c_0= 71.22 c_1= 63.65 c_2= 56.15 c_3= 50.5 c_4= 40.21 
+t_0= 6.8 t_1= 15.43 t_2= 15.45 t_3= 21.67 t_4= 27.74 
+k_0= 99.83 k_1= 219.42 k_2= 249.48 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Biogaz', 'Solaire', 'Hydro']
+Initial Objective: 1292272.3668992992
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 818328.2609593958
+Emissions de la solution = 10621
+Surcout : 818679
+Contraintes non respectées 
+Temps d'exécution : 66.0
+c_0= 72.42 c_1= 62.8 c_2= 55.68 c_3= 56.6 c_4= 39.73 
+t_0= 7.5 t_1= 10.79 t_2= 21.13 t_3= 29.99 t_4= 30.01 
+k_0= 98.72 k_1= 220.36 k_2= 251.75 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Eolien', 'Biogaz', 'Hydro']
+Initial Objective: 1552930.6113251785
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1121749.3119101329
+Emissions de la solution = 10281
+Surcout : 1121749
+Contraintes respectées 
+Temps d'exécution : 82.57
+c_0= 71.46 c_1= 62.96 c_2= 55.75 c_3= 51.07 c_4= 42.03 
+t_0= 8.14 t_1= 20.6 t_2= 20.62 t_3= 24.92 t_4= 28.15 
+k_0= 100.73 k_1= 221.03 k_2= 249.77 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Eolien', 'Hydro', 'Biogaz']
+Initial Objective: 1548399.8918436756
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1265373.8750595103
+Emissions de la solution = 10122
+Surcout : 1265373
+Contraintes respectées 
+Temps d'exécution : 83.57
+c_0= 71.44 c_1= 62.98 c_2= 56.54 c_3= 50.71 c_4= 40.77 
+t_0= 6.29 t_1= 17.08 t_2= 17.09 t_3= 26.18 t_4= 26.47 
+k_0= 100.76 k_1= 220.86 k_2= 250.43 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Hydro', 'Biomasse', 'Biogaz']
+Initial Objective: 1547752.4109874365
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1082143.8475666684
+Emissions de la solution = 10223
+Surcout : 1082143
+Contraintes respectées 
+Temps d'exécution : 72.91
+c_0= 72.2 c_1= 65.15 c_2= 56.63 c_3= 52.27 c_4= 41.98 
+t_0= 6.3 t_1= 21.46 t_2= 21.47 t_3= 23.23 t_4= 26.97 
+k_0= 98.17 k_1= 219.72 k_2= 250.19 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Hydro', 'Biogaz', 'Solaire']
+Initial Objective: 1154251.231771287
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 854675.7107542519
+Emissions de la solution = 11020
+Surcout : 855071
+Contraintes respectées 
+Temps d'exécution : 71.29
+c_0= 73.29 c_1= 64.12 c_2= 54.91 c_3= 50.5 c_4= 43.9 
+t_0= 7.9 t_1= 12.5 t_2= 16.64 t_3= 21.82 t_4= 29.99 
+k_0= 98.34 k_1= 225.54 k_2= 245.77 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Solaire', 'Biogaz', 'Hydro']
+Initial Objective: 1426483.4889423242
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 967208.9048788552
+Emissions de la solution = 10132
+Surcout : 967208
+Contraintes respectées 
+Temps d'exécution : 80.84
+c_0= 71.83 c_1= 62.49 c_2= 58.82 c_3= 52.2 c_4= 42.37 
+t_0= 7.08 t_1= 10.19 t_2= 26.35 t_3= 26.36 t_4= 28.02 
+k_0= 99.68 k_1= 219.68 k_2= 248.82 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Solaire', 'Hydro', 'Biomasse']
+Initial Objective: 1420927.881110962
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 771644.7414455232
+Emissions de la solution = 11548
+Surcout : 771644
+Contraintes respectées 
+Temps d'exécution : 76.88
+c_0= 72.3 c_1= 62.55 c_2= 59.95 c_3= 51.71 c_4= 41.16 
+t_0= 8.1 t_1= 9.6 t_2= 28.68 t_3= 29.12 t_4= 29.86 
+k_0= 101.76 k_1= 221.3 k_2= 250.41 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Hydro', 'Biomasse', 'Solaire', 'Biogaz']
+Initial Objective: 1296058.3457294148
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 812351.5513766786
+Emissions de la solution = 11062
+Surcout : 868390
+Contraintes respectées 
+Temps d'exécution : 78.16
+c_0= 71.21 c_1= 61.32 c_2= 57.04 c_3= 41.81 c_4= 41.81 
+t_0= 7.9 t_1= 8.9 t_2= 15.69 t_3= 29.99 t_4= 29.99 
+k_0= 99.86 k_1= 220.32 k_2= 250.03 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Solaire', 'Hydro', 'Biogaz']
+Initial Objective: 1422391.1736996588
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 759190.8563964202
+Emissions de la solution = 11135
+Surcout : 759190
+Contraintes non respectées 
+Temps d'exécution : 67.64
+c_0= 71.16 c_1= 61.77 c_2= 61.24 c_3= 51.62 c_4= 40.28 
+t_0= 9.9 t_1= 11.08 t_2= 29.99 t_3= 30.01 t_4= 30.0 
+k_0= 102.32 k_1= 219.54 k_2= 250.59 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Eolien', 'Hydro', 'Solaire', 'Biogaz']
+Initial Objective: 1288297.5838460918
+Success: False
+Message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.
+Final Objective: 752668.0061022693
+Emissions de la solution = 11723
+Surcout : 753022
+Contraintes non respectées 
+Temps d'exécution : 83.25
+c_0= 71.65 c_1= 62.89 c_2= 57.02 c_3= 55.74 c_4= 40.7 
+t_0= 8.39 t_1= 14.2 t_2= 14.48 t_3= 29.99 t_4= 30.01 
+k_0= 98.86 k_1= 220.65 k_2= 250.75 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biomasse', 'Biogaz', 'Hydro', 'Solaire']
+Initial Objective: 1160060.499940789
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 862679.3760836372
+Emissions de la solution = 10979
+Surcout : 863075
+Contraintes respectées 
+Temps d'exécution : 69.61
+c_0= 72.52 c_1= 62.64 c_2= 56.84 c_3= 52.04 c_4= 43.88 
+t_0= 8.09 t_1= 10.6 t_2= 15.5 t_3= 22.29 t_4= 29.99 
+k_0= 101.19 k_1= 221.65 k_2= 252.0 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Hydro', 'Biogaz', 'Biomasse']
+Initial Objective: 1537724.6528653745
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1102683.06992019
+Emissions de la solution = 10307
+Surcout : 1102683
+Contraintes respectées 
+Temps d'exécution : 75.06
+c_0= 72.2 c_1= 62.39 c_2= 56.05 c_3= 51.22 c_4= 43.05 
+t_0= 5.7 t_1= 21.26 t_2= 21.27 t_3= 21.85 t_4= 27.89 
+k_0= 99.19 k_1= 219.75 k_2= 249.47 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Biomasse', 'Hydro', 'Solaire']
+Initial Objective: 1161709.4710777008
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 822557.7858729862
+Emissions de la solution = 11497
+Surcout : 822962
+Contraintes respectées 
+Temps d'exécution : 77.65
+c_0= 73.44 c_1= 62.34 c_2= 59.4 c_3= 53.1 c_4= 42.0 
+t_0= 10.08 t_1= 11.63 t_2= 19.06 t_3= 19.09 t_4= 29.99 
+k_0= 102.38 k_1= 218.43 k_2= 248.51 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Hydro', 'Biomasse', 'Solaire']
+Initial Objective: 1154340.1964462292
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 978833.9480026979
+Emissions de la solution = 11069
+Surcout : 978833
+Contraintes respectées 
+Temps d'exécution : 82.32
+c_0= 73.06 c_1= 62.77 c_2= 56.56 c_3= 40.66 c_4= 40.66 
+t_0= 8.59 t_1= 10.38 t_2= 17.89 t_3= 27.16 t_4= 27.16 
+k_0= 100.05 k_1= 220.15 k_2= 250.42 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Biogaz', 'Hydro', 'Biomasse']
+Initial Objective: 1543515.5435399967
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1164953.734377238
+Emissions de la solution = 10277
+Surcout : 1164953
+Contraintes respectées 
+Temps d'exécution : 78.72
+c_0= 71.1 c_1= 62.14 c_2= 56.56 c_3= 51.76 c_4= 43.59 
+t_0= 5.0 t_1= 19.63 t_2= 19.65 t_3= 22.61 t_4= 27.42 
+k_0= 100.25 k_1= 219.44 k_2= 248.58 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Biogaz', 'Solaire', 'Eolien', 'Hydro']
+Initial Objective: 1430406.655598418
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1031299.0537376717
+Emissions de la solution = 10683
+Surcout : 1031299
+Contraintes respectées 
+Temps d'exécution : 99.21
+c_0= 71.91 c_1= 62.3 c_2= 57.24 c_3= 51.12 c_4= 40.5 
+t_0= 6.9 t_1= 11.55 t_2= 23.73 t_3= 23.74 t_4= 28.36 
+k_0= 99.71 k_1= 219.23 k_2= 250.55 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Biomasse', 'Biogaz', 'Hydro']
+Initial Objective: 1552789.1091936284
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 746025.9037958941
+Emissions de la solution = 10514
+Surcout : 746025
+Contraintes respectées 
+Temps d'exécution : 78.4
+c_0= 72.73 c_1= 66.09 c_2= 60.34 c_3= 50.66 c_4= 43.48 
+t_0= 13.7 t_1= 29.32 t_2= 29.33 t_3= 29.34 t_4= 29.99 
+k_0= 102.4 k_1= 217.06 k_2= 251.63 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Biogaz', 'Biomasse', 'Hydro']
+Initial Objective: 1555113.5649179996
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 869328.1704024137
+Emissions de la solution = 10068
+Surcout : 869328
+Contraintes respectées 
+Temps d'exécution : 80.13
+c_0= 72.17 c_1= 66.82 c_2= 56.28 c_3= 51.47 c_4= 41.34 
+t_0= 4.1 t_1= 27.21 t_2= 27.23 t_3= 29.06 t_4= 29.95 
+k_0= 100.4 k_1= 220.32 k_2= 250.3 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Hydro', 'Biogaz', 'Eolien']
+Initial Objective: 1544462.7668715871
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1253009.028998815
+Emissions de la solution = 10844
+Surcout : 1253009
+Contraintes respectées 
+Temps d'exécution : 99.01
+c_0= 71.11 c_1= 62.8 c_2= 56.77 c_3= 50.43 c_4= 41.43 
+t_0= 8.4 t_1= 16.1 t_2= 16.15 t_3= 21.91 t_4= 27.11 
+k_0= 98.94 k_1= 219.6 k_2= 249.46 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Solaire', 'Biomasse', 'Hydro', 'Biogaz']
+Initial Objective: 1548258.3897121255
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1110377.6892847589
+Emissions de la solution = 10180
+Surcout : 1110377
+Contraintes respectées 
+Temps d'exécution : 83.16
+c_0= 71.97 c_1= 63.93 c_2= 56.78 c_3= 52.85 c_4= 41.97 
+t_0= 5.76 t_1= 20.88 t_2= 20.89 t_3= 27.01 t_4= 27.15 
+k_0= 98.19 k_1= 217.79 k_2= 248.91 
+
+L'ordre des technos décarbonées est le suivant : ['Eolien', 'Biogaz', 'Hydro', 'Solaire', 'Biomasse']
+Initial Objective: 1281468.2546394202
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 864393.9795323457
+Emissions de la solution = 11356
+Surcout : 864393
+Contraintes respectées 
+Temps d'exécution : 88.95
+c_0= 72.57 c_1= 60.02 c_2= 58.14 c_3= 53.18 c_4= 42.14 
+t_0= 7.1 t_1= 12.4 t_2= 13.88 t_3= 27.74 t_4= 28.53 
+k_0= 99.99 k_1= 223.58 k_2= 249.58 
+
+L'ordre des technos décarbonées est le suivant : ['Biomasse', 'Solaire', 'Biogaz', 'Eolien', 'Hydro']
+Initial Objective: 1556038.6318597433
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 1216644.9256289748
+Emissions de la solution = 10319
+Surcout : 1216644
+Contraintes respectées 
+Temps d'exécution : 98.63
+c_0= 72.36 c_1= 64.0 c_2= 57.13 c_3= 52.31 c_4= 40.49 
+t_0= 7.12 t_1= 17.48 t_2= 17.5 t_3= 22.79 t_4= 28.61 
+k_0= 98.33 k_1= 219.53 k_2= 248.95 
+
+killed
+La solution du problème a un budget de 12329.726031548185 et un surcoût de 701842.2427636551
+Elle est atteinte pour l'ordre suivant des technos décarbonées : ['Biogaz', 'Hydro', 'Biomasse', 'Solaire', 'Eolien']
+c_0= 74.97 c_1= 63.11 c_2= 57.48 c_3= 55.17 c_4= 49.56 
+t_0= 11.49 t_1= 11.54 t_2= 11.61 t_3= 29.98 t_4= 29.99 
+k_0= 98.46 k_1= 219.38 k_2= 249.42 

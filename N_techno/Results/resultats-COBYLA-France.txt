@@ -1,0 +1,16 @@
+Budget de référence :  696.840211106784
+Surcout de référence :  0.0
+
+Success: True
+Message: Optimization terminated successfully.
+Final Objective: 515552.3691079574
+Emissions de la solution = 513
+Surcout : 515552
+Temps d'exécution :  41.44
+c_0= 10.04 c_1= 9.83 c_2= 10.28 c_3= 9.79 c_4= 11.38 
+t_0= 1.01 t_1= 1.02 t_2= 1.17 t_3= 1.0 t_4= 1.0 
+k_0= 99.9 k_1= 99.93 k_2= 100.9 
+
+['Biomasse' 'Solaire' 'Eolien' 'Hydro' 'Biogaz']
+La solution du problème a un budget de  513.895679316953  et un surcoût de  515552.3691079574
+Elle est atteinte pour l'ordre suivant des technos décarbonées :  ['Biomasse' 'Solaire' 'Eolien' 'Hydro' 'Biogaz']
