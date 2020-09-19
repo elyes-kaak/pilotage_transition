@@ -72,7 +72,7 @@ class Methodes :
 
 
         # Résolution du problème d'optimisation (fonction objectif correspondant à la minimisation de la valeur finale de x_1
-        optimisation = Optim(partial(self.f_budget), contraintes.contr, x0)
+        optimisation = Optim(partial(self.f_budget), contraintes.contr, bnds, x0)
 
         x, out, success = optimisation.return_sol_optim()
         trajectoire_sol = Calcul_trajectoire(x)
