@@ -1,13 +1,11 @@
-from itertools import permutations
-from Parametres import *
+import matplotlib.image as mpimg
 from Methodes import *
 import time
 import multiprocessing as mp
-import sys
+from tqdm import tqdm, trange
 
-fn = "Results/test2.txt"
-sigma = list(permutations(range(m)))
-optim = Methodes()
+nom = 'results-COBYLA-France-multiple-x0-22'
+fn = "Results/" + nom + ".txt"
 
 def listener(q):
     '''listens for messages on the q, writes to file. '''
@@ -22,20 +20,13 @@ def listener(q):
             f.flush()
 
 def worker(arg, q, bud_surcout_xsol):
-    ordre_dec = []
-    ci_decar_worker = ci_decar.copy()
-    X_j_worker = X_j.copy()
     res = ''
-    for k in range(m):
-        ci_decar_worker[k] = ci_decar[sigma[arg][k]]
-        X_j_worker[k] = X_j[sigma[arg][k]]
-        ordre_dec.append(type_dec[sigma[arg][k]])
-
-    res = res + "L'ordre des technos décarbonées est le suivant : " + str(ordre_dec) + '\n'
-    res = res + "sigma[i] = " + str(sigma[arg]) + '\n'
     start_time = time.time()
-    budg, surc, x, out = optim.methode_surcout(ci_decar_worker, X_j_worker)
+    # Valeurs initiales
+    optim = Methodes(arg)
+    budg, surc, x, out = optim.methode_surcout()
     end_time = time.time()
+    res = res + "x0 = " + ','.join(map(str, arg)) + '\n'
     res = res + "x = " + ','.join(map(str, x)) + '\n'
     res = res + out
     res = res + "Temps d'exécution : " + str(round(end_time - start_time, 2)) + '\n'
@@ -48,8 +39,8 @@ def worker(arg, q, bud_surcout_xsol):
 def main() :
     start_time = time.time()
 
-    budget_ref = Calcul_trajectoire(x_ref, ci_decar, X_j).budget_carbone_ref()
-    surcout_ref = Calcul_trajectoire(x_ref, ci_decar, X_j).surcout_trajectoire_ref()
+    budget_ref = Calcul_trajectoire(x_ref).budget_carbone_ref()
+    surcout_ref = Calcul_trajectoire(x_ref).surcout_trajectoire_ref()
     with open(fn, 'w') as f:
         f.write('Budget de référence : ' + str(budget_ref) + '\n')
         f.write('Surcout de référence : '+ str(surcout_ref) + '\n')
@@ -68,11 +59,20 @@ def main() :
     jobs = []
 
     #for i in range(len(sigma)) :
-    for i in range(5) :
-        job = pool.apply_async(worker, (i, q, bud_surc_xsol))
+    for i in range(50) :
+        x0 = np.array([])
+        t_i = np.random.uniform(min(min(b1)), max(max(b1)), m)
+        c_i = np.random.uniform(min(min(b2)), max(max(b2)), m)
+        k_j = np.random.uniform(min(min(b3)), max(max(b3)), n - m)
+        x0 = np.append(x0, t_i)  # valeur initiale de t_i
+        x0 = np.append(x0, c_i)  # valeur initiale de c_i
+        x0 = np.append(x0, k_j)  # valeur initiale de k_j
+
+        job = pool.apply_async(worker, (x0.copy(), q, bud_surc_xsol))
         jobs.append(job)
 
-    for job in jobs:
+
+    for job in tqdm(jobs):
         job.get()
 
 
@@ -92,23 +92,14 @@ def main() :
 
     x = bud_surc_xsol[index_min][2]
 
-    ci_decar_bis = ci_decar.copy()
-    X_jbis = X_j.copy()
-    X_j0bis = X_j_0.copy()
-    ordre_dec = []
+    trajectoire_sol = Calcul_trajectoire(x)
 
-    for k in range(m):
-        ci_decar_bis[k] = ci_decar[sigma[index_min][k]]
-        X_jbis[k] = X_j[sigma[index_min][k]]
-        X_j0bis[k] = X_j_0[sigma[index_min][k]]
-        ordre_dec.append(type_dec[sigma[index_min][k]])
+    budget = trajectoire_sol.budget_carbone()
+    surcout = trajectoire_sol.surcout_trajectoire()
+    ordre_dec = trajectoire_sol.ordre_dec
 
-
-    temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = Calcul_trajectoire(x, ci_decar_bis, X_jbis).tableau_evol()
-
-    res = 'La solution du problème a un budget de ' + str(bud_surc[index_min][1]) + ' et un surcoût de ' + str(bud_surc[index_min][0]) + '\n'
+    res = 'La solution du problème a un budget de ' + str(budget) + ' et un surcoût de ' + str(surcout) + '\n'
     res = res + "Elle est atteinte pour l'ordre suivant des technos décarbonées : " + str(ordre_dec) + '\n'
-    res = res + "sigma[index_min] = " + str(sigma[index_min]) + '\n'
     res = res + "x = " + ','.join(map(str, x)) + '\n'
     res = res + print_x(x)
 
@@ -116,34 +107,13 @@ def main() :
         f.write(res)
         f.flush()
 
-    plot = Plot(temps, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x, ci_decar_bis, ordre_dec, X_jbis, X_j0bis, 'test2')
+    plot = Plot(x, nom)
     plot.plot()
-    plt.show()
-
-def plot_resultat(perm, x) :
-    ci_decar_bis = ci_decar.copy()
-    X_jbis = X_j.copy()
-    X_j0bis = X_j_0.copy()
-    ordre_dec = []
-
-    for k in range(m):
-        ci_decar_bis[k] = ci_decar[perm[k]]
-        X_jbis[k] = X_j[perm[k]]
-        X_j0bis[k] = X_j_0[perm[k]]
-        ordre_dec.append(type_dec[perm[k]])
-
-    temps, [techno_dec, techno_car], [taxes_decar, taxes_carb], [c_nat_decar, c_nat_carb], demande = Calcul_trajectoire(
-        x, ci_decar_bis, X_jbis).tableau_evol()
-
-    print("Max dérivée : ", Calcul_trajectoire(x, ci_decar_bis, X_jbis).derivee())
-    print("Ecart demande : ", Calcul_trajectoire(x, ci_decar_bis, X_jbis).ecart_demande())
-
-    plot = Plot(temps, taxes_decar, taxes_carb, c_nat_decar, c_nat_carb, techno_dec, techno_car, demande, x,
-                ci_decar_bis, ordre_dec, X_jbis, X_j0bis, 'test-bis')
-    plot.plot()
+    plt.clf()
+    plt.axis('off')
+    img = mpimg.imread('Figures/' + nom + '.png')
+    plt.imshow(img)
     plt.show()
 
 if __name__ == '__main__':
     main()
-
-    #plot_resultat([0, 1, 3, 4, 2], [3.19,3.28,6.17,6.33,6.33,11.48,12.06,9.73,9.24,15.44,99.11,99.23,100.12])

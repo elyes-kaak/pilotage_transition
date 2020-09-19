@@ -7,7 +7,7 @@ from numpy import diff
 class Calcul_trajectoire :
     def __init__(self, x):
         self.x = x
-        self.cinetique = Cinetique()
+        self.cinetique = Cinetique(self.x)
         temps = [i for i in np.arange(0, max_temps, pas_temps)]
 
         techno_dec = [[] for i in range(m)]
@@ -18,24 +18,23 @@ class Calcul_trajectoire :
         c_nat_carb = [[] for i in range(n - m)]
         demande = []
         for t in temps:
-
             demande.append(self.cinetique.cinetique_demande(t))
-            self.cinetique.mix_instant_t(t, self.x)
+            self.cinetique.mix_instant_t(t)
             self.cinetique.last_demand = self.cinetique.cinetique_demande(t)
             for j in range(n - m):
-                techno_car[j].append(self.cinetique.cinetique_techno_carb(t, self.x, j))
-                taxes_carb[j].append(self.cinetique.taxes_car(t, self.x, j))
+                techno_car[j].append(self.cinetique.cinetique_techno_carb(t, j))
+                taxes_carb[j].append(self.cinetique.taxes_car(t, j))
                 c_nat_carb[j].append(self.cinetique.cout_car_nat(t, j))
             for j in range(m):
-                techno_dec[j].append(self.cinetique.cinetique_techno_decar(t, self.x, j))
-                taxes_decar[j].append(self.cinetique.taxes_dec(t, self.x, j))
+                techno_dec[j].append(self.cinetique.cinetique_techno_decar(t, j))
+                taxes_decar[j].append(self.cinetique.taxes_dec(t, j))
                 c_nat_decar[j].append(self.cinetique.cout_dec_nat(t, j))
 
         self.temps = temps 
         self.techno_dec = techno_dec 
         self.techno_car = techno_car
-        self.taxes_decar = techno_dec
-        self.taxes_carb = techno_car
+        self.taxes_decar = taxes_decar
+        self.taxes_carb = taxes_carb
         self.c_nat_decar = c_nat_decar
         self.c_nat_carb = c_nat_carb
         self.demande = demande
@@ -48,10 +47,6 @@ class Calcul_trajectoire :
         return sum([trapz(self.techno_car[j], self.temps) for j in range(1, n-m)])
 
     def surcout_trajectoire(self):
-        '''for i in range(m - 1):
-            if(self.x[i] - self.x[i + 1] > 0):
-                return 1e13'''
-
         S = 0
         surc_taxe_carb = np.multiply(self.taxes_carb, self.techno_car)
         surc_taxe_dec = np.multiply(self.taxes_decar, self.techno_dec)
@@ -59,12 +54,7 @@ class Calcul_trajectoire :
         S += sum([trapz(surc_taxe_carb[j], self.temps) for j in range(n-m)])
         S += sum([trapz(surc_taxe_dec[j], self.temps) for j in range(m)])
         S += sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
-
-        '''if(self.derivee() > max_derivee or self.budget_carbone() > max_budget_carbone
-           or self.ecart_demande() > max_ecart_demande) :
-            return 1e13'''
-
-        return S
+        return abs(S)
 
 
     def surcout_trajectoire_ref(self):

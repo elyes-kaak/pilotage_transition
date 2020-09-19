@@ -6,9 +6,10 @@ Nfeval = 1
 
 class Optim:
 
-    def __init__(self, objectif, contraintes):
+    def __init__(self, objectif, contraintes, x0):
         self.objectif = objectif
         self.contraintes = contraintes
+        self.x0 = x0
 
 
     def callbackF(self, x, convergence = 0):
@@ -18,14 +19,16 @@ class Optim:
         return False
 
     def sol_optim(self):
-        #return minimize(self.objectif, x0, method='SLSQP', constraints=self.contraintes, bounds=bnds,
+        #return minimize(self.objectif, self.x0, method='SLSQP', constraints=self.contraintes,
         #                tol=None, callback=self.callbackF)
-        #return minimize(self.objectif, x0, method='COBYLA', constraints=self.contraintes,
-        #                callback=self.callbackF)#, options={'rhobeg': .5, 'maxiter': 10000, 'disp': False, 'catol': 0.000001})
 
-        return differential_evolution(self.objectif, bnds, maxiter=1000, popsize=10*(n+m), tol = 0.001,
-                                      workers = -1, updating = 'deferred', callback=self.callbackF, strategy = 'best1bin',
-                                      mutation=0.8, recombination=0.9)#
+        '''return differential_evolution(self.objectif, bnds, maxiter=1000, popsize=2*(n+m), tol = 0.001, constraints=self.contraintes,
+                                              workers = -1, updating = 'deferred', callback=self.callbackF, strategy = 'best1bin',
+                                              mutation=0.5, recombination=0.7)'''
+
+        return minimize(self.objectif, self.x0, method='COBYLA', constraints=self.contraintes)#, options={'rhobeg': .5, 'maxiter': 10000, 'disp': False, 'catol': 0.000001})
+
+
 
     def return_sol_optim(self):
 

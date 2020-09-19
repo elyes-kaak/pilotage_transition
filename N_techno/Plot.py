@@ -24,13 +24,9 @@ class Plot :
         self.techno_car = self.trajectoire.techno_car
         self.x = x
         self.ordre_dec = self.trajectoire.ordre_dec
-        '''for i in range(len(t)):
-            self.demande[i] += sum(xj0)
-            for j in range(m):
-                self.techno_dec[j][i] += xj0[j]'''
 
     def plot(self):
-        self.fig.set_size_inches((12, 5), forward=False)
+        self.fig.set_size_inches((15, 8), forward=False)
         self.ax1.plot(self.t, self.demande, 'r-', label = r'Demande \'energ\'etique')
 
 
@@ -54,7 +50,7 @@ class Plot :
         self.ax1.set_title(r'\'Evolution de la demande et des activit\'es''\n'r'des diff\'erentes technologies')
         self.ax1.set_ylabel(r'Demande ou activit\'e (TWh)')
         self.ax1.set_xlabel(r'Temps')
-        self.ax1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol=2)
+        self.ax1.legend(loc='upper center', bbox_to_anchor=(0.5, -0.03), fancybox=True, shadow=True, ncol=2)
         self.ax1.grid(linestyle='--')
 
         for i in range(m):
@@ -66,20 +62,8 @@ class Plot :
         self.ax2.set_title(r'Evolution des co\^uts')
         self.ax2.set_ylabel(r'Co\^uts (\$/MWh)')
         self.ax2.set_xlabel(r'Temps')
-        self.ax2.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol = 2)
+        self.ax2.legend(loc='upper center', bbox_to_anchor=(0.5, -0.03), fancybox=True, shadow=True, ncol = 2)
         self.ax2.grid(linestyle = '--')
-
-        # for i in range(m) :
-        #     self.ax3.plot(self.t, self.taxes_decar[i], label = r'Taxe ou subvention sur la technologie ' + self.ordre_dec[i])
-        #
-        # for i in range(n - m) :
-        #     self.ax3.plot(self.t, self.taxes_carb[i], label = r'Taxe ou subvention sur la technologie ' + type_car[i])
-        # self.ax3.set_title(r'Evolution des taxes')
-        # self.ax3.set_ylabel(r'Co\^uts (\$/MTep)')
-        # self.ax3.set_xlabel(r'Temps')
-        # self.ax3.legend(loc='upper center', bbox_to_anchor=(0.5, -0.01), fancybox=True, shadow=True, ncol = 2)
-        # self.ax3.grid(linestyle = '--')
-        # self.fig.subplots_adjust(wspace=0.3)
 
         t_i = ''
         k_i = ''
@@ -115,4 +99,3 @@ class Plot :
                                 + ' Ordre des techno = ' + ordre_techno}
 
         plt.savefig('Figures/' + self.description + '.png', bbox_inches='tight', dpi=500, metadata=mdata)
-

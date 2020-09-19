@@ -3,7 +3,7 @@
 import numpy as np
 
 # Paramètres globaux
-T_life = [20, 30, 30]#, 60]   # durées de vie des techno carbonées
+T_life = [20, 30, 30]   # durées de vie des techno carbonées
 demande_ini = 440   # demande énergétique
 X_j = [1000, 20, 50, 1000, 100] # productions maximales des techno décarbonées
 X_jF = [240, 0, 0] # valeurs finales des techno carbonées
