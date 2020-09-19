@@ -6,7 +6,7 @@ from Methodes import *
 import time
 import sys
 
-nom = 'results-COBYLA-France-multiple-x0-2'
+nom = 'results-Diff-France-multiple-x0'
 
 class Logger(object):
     def __init__(self):
@@ -31,7 +31,7 @@ def main():
     print('Surcout de référence : ', surcout_ref)
     print()
 
-    for i in range(50) :
+    for i in range(1) :
         # Valeurs initiales
         x0 = np.array([])
         
@@ -71,10 +71,11 @@ def plot_resultat(x) :
 
     plot = Plot(x, nom)
     plot.plot()
-    plt.clf()
+    '''plt.clf()
     plt.axis('off')
     img = mpimg.imread('Figures/' + nom + '.png')
-    plt.imshow(img)
+    plt.imshow(img)'''
+    plt.show()
 
 def test():
     fichier = open('Results/' + nom + '.txt', 'r')
@@ -98,7 +99,6 @@ def test():
 
 
 if __name__ == '__main__':
-    #main()
-    test()
-    #plot_resultat([2.0440549764252647,17.399640781622505,17.471669320151832,26.05450024631681,18.513977531514968,23.964985824834454,294.8150427621593,498.85285885363743,63.94052511386734,247.36455447812565,2982.531304046623,229.79900711194455,3230.2954682351374])
-
+    main()
+    #test()
+    #plot_resultat([16.2537414647331,14.439535968218593,27.981859090168633,25.95840285063579,14.4375197400824,18.49993160662641,201.05498889132096,178.9143309800099,242.7432873187607,341.1791744170492,2776.259318792513,946.0868017223198,9805.869782318026])

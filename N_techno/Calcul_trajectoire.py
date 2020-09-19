@@ -54,7 +54,7 @@ class Calcul_trajectoire :
         integrand_chal_lat = np.multiply(self.c_nat_carb, np.subtract([np.multiply(p_0[j], self.demande) for j in range(n-m)], self.techno_car))
         S += sum([trapz(surc_taxe_carb[j], self.temps) for j in range(n-m)])
         S += sum([trapz(surc_taxe_dec[j], self.temps) for j in range(m)])
-        S += sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
+        S -= sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
         return abs(S)
 
 
@@ -63,7 +63,7 @@ class Calcul_trajectoire :
         integrand_chal_lat = np.multiply(self.c_nat_carb, np.subtract([np.multiply(p_0[j], self.demande) for j in range(n-m)], self.techno_car))
         S += sum([trapz(integrand_chal_lat[j], self.temps) for j in range(n-m)])
 
-        return S
+        return abs(S)
 
     def val_finale_car(self, j):
         return self.techno_car[j][-1]

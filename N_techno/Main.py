@@ -7,7 +7,7 @@ import time
 import multiprocessing as mp
 from tqdm import tqdm, trange
 
-nom = 'results-COBYLA-France-multiple-x0-22'
+nom = 'results-Diff-France-multiple-x0'
 fn = "Results/" + nom + ".txt"
 
 def listener(q):
