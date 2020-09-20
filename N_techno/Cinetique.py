@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from Parametres_Allemagne import *
+from Parametres import *
 
 # Cinétique à la ligne de transition (entre t_1 et t_car)
 
@@ -72,8 +72,7 @@ class Cinetique:
 
         self.instant_actuel = t
 
-        if (np.all(np.abs(np.array([self.x_car[k] for k in range(n-m)]) - np.array([X_jF[k] for k in range(n-m)])) <= 0.05 * np.array([max(1, X_jF[k]) for k in range(n-m)]))):
-
+        if (np.all(np.abs(np.array([self.x_car[k] for k in range(n-m)]) - np.array([X_jF[k] for k in range(n-m)])) <= 0.01 * np.array([max(1, X_jF[k]) for k in range(n-m)]))):
             self.t_f = True
             if(self.instant_f == -1) :
                 self.instant_f = t

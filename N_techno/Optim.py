@@ -1,5 +1,5 @@
 from scipy.optimize import minimize, shgo, NonlinearConstraint, differential_evolution
-from Parametres_Allemagne import *
+from Parametres import *
 import math
 
 Nfeval = 1
@@ -24,9 +24,6 @@ class Optim:
         return differential_evolution(self.objectif, bnds, maxiter=150, popsize=2*(n+m), tol = 0.01, constraints=self.contraintes,
                                               workers = -1, updating = 'deferred', callback=self.callbackF, strategy = 'best1bin',
                                               mutation=0.5, recombination=0.7)
-        #return minimize(self.objectif, self.x0, method='COBYLA', constraints=self.contraintes)#, options={'rhobeg': .5, 'maxiter': 10000, 'disp': False, 'catol': 0.000001})
-
-
 
     def return_sol_optim(self):
 
